@@ -18,23 +18,6 @@ class KnightPathFinder
       valid_jumps << [new_x, new_y] if self.in_bounds?( new_x , new_y )
     end
 
-    # valid_jumps.tap do |v|
-    #   x_offsets = [-2, -1, 2, 1]
-    #   y_offsets = [1, 2, -1, 2]
-    #
-    #   all_position_offsets = [ ]
-
-    #   x_offsets.each do |x|
-    #     y_offsets.each do |y|
-    #       all_position_offsets << [x, y] unless x**2 == y**2
-    #     end
-    #   end
-    #
-    #   all_position_offsets.uniq!
-    #   all_position_offsets.push( [-1, -2], [1, -2] )
-    #
-    #   v << [x + 1 , y + 2] if self.class.in_bounds?(x+1, y+2)
-    # end
 
   end
 
