@@ -62,18 +62,17 @@ class PolyTreeNode
     nil
   end
 
-  def trace_path_back(value)
-    found_node = self.bfs(value)
+  def trace_path_back
+    current_node = self
 
-    raise "Node not found" if found_node.nil?
+    path = [ ]
 
-    path = [found_node.value]
-
-    until found_node == self
-      found_node = found_node.parent
-      path << found_node.value
+      # debugger #if found_node.parent == self
+    until current_node.parent.nil?
+      path << current_node.value
+      current_node = current_node.parent
     end
-    path
+    path.reverse.unshift(current_node.value)
   end
 
   def remove_child(node_obj)

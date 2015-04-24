@@ -27,14 +27,14 @@ class KnightPathFinder
 
 
   def build_move_tree(pos)
-    root = TreeNode.new(pos)
+    root = PolyTreeNode.new(pos)
     queue = [ root ]
     until queue.empty?
       parent = queue.shift
       possible_moves = new_move_positions(parent.value)
 
       possible_moves.each do |move|
-        child = TreeNode.new(move)
+        child = PolyTreeNode.new(move)
         child.parent = parent
         queue << child
       end
@@ -43,15 +43,20 @@ class KnightPathFinder
   end
 
   def new_move_positions(pos)
-    possible_moves = KnightPathFinder.valid_moves - @visited_positions
+    possible_moves = KnightPathFinder.valid_moves(pos) - @visited_positions
     possible_moves.each { |move| @visited_positions << move }
 
     possible_moves
   end
 
   def find_path(pos)
-    @move_tree.trace_path_back(pos)
+    found_node = @move_tree.bfs(pos)
+    found_node.trace_path_back
   end
 
+end
 
+if __FILE__ == $PROGRAM_NAME
+  knight = KnightPathFinder.new([0,0])
+  p knight.find_path([0,1])
 end
