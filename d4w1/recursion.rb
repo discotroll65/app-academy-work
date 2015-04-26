@@ -1,4 +1,5 @@
 require 'byebug'
+require 'pry'
 
 def range(start_num, end_num)
   return [] if start_num > end_num
@@ -17,7 +18,6 @@ def iter_array_sum(array)
   sum
 end
 
-# p iter_array_sum([1,2,3,4])
 
 def arr_sum(arr)
   return arr[0] if arr.count == 1
@@ -25,14 +25,12 @@ def arr_sum(arr)
 
 end
 
-# p arr_sum([1,2,3,4])
 
 def exp1(b, n)
   return 1 if n == 0
   b * exp1(b, n-1)
 end
 
-# p exp1(2,3)
 
 def exp2(b, n)
   return 1 if n == 0
@@ -41,36 +39,14 @@ def exp2(b, n)
   return  exp2(b, n / 2) * exp2(b, n / 2) if n.even?
 end
 
-# p exp2(2,8)
 
 class Array
 
-  def deep_dup (el = 0)
-
-
-    # self.each_with_index do |el, indx|
-    #   if !el.is_a? Array
-    #     return [el]
-    #   else
-    #   end
-    # end
+  def deep_dup
+    inject([]){|memo, el| memo << (el.is_a?(Array) ? el.deep_dup : el) }
   end
+
 end
-
-# robot_parts = [
-#   ["nuts", "bolts", "washers"],
-#   ["capacitors", "resistors", "inductors"]
-# ]
-#
-# robot_parts_copy = robot_parts.deep_dup
-#
-# # shouldn't modify robot_parts
-# robot_parts_copy[1] << "LEDs"
-# # wtf?
-# # p robot_parts[1] # => ["capacitors", "resistors", "inductors", "LEDs"]
-#
-
-
 
 
 def bsearch(arr, target)
@@ -97,15 +73,6 @@ def bsearch(arr, target)
 
   end
 end
-
-
-p bsearch([1, 2, 3], 1) # => 0
-#p bsearch([2, 3, 4, 5], 7) # => 1
-# p bsearch([2, 4, 6, 8, 10], 6) # => 2
-# p bsearch([1, 3, 4, 5, 9], 5) # => 3
-# p bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
-# p bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
-# p bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
 
 
 

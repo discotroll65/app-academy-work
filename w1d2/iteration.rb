@@ -1,3 +1,5 @@
+#Write a method factors that prints out all the factors of a given
+#number.
 def factors(num)
   factors = [1, num]
   i = 2
