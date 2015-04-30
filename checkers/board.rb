@@ -70,10 +70,10 @@ class Board
     self.grid.each_with_index do |row, row_indx|
       row.each_index do |col_indx|
         if row_indx < 3 && self.class.dark_square?([row_indx, col_indx])
-          place_piece(:red, [row_indx, col_indx] )
+          place_starting_piece(:red, [row_indx, col_indx] )
         elsif row_indx > 4 && self.class.dark_square?([row_indx, col_indx])
 
-          place_piece(:white, [row_indx, col_indx] )
+          place_starting_piece(:white, [row_indx, col_indx] )
         end
       end
     end
