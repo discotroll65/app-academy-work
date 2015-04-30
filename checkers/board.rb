@@ -20,7 +20,6 @@ class Board
   end
 
   def square_render(pos, back_color)
-    row, col = pos
     if self[pos].nil?
       "   ".colorize(background: back_color)
     else
