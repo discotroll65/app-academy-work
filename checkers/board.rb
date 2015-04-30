@@ -57,11 +57,8 @@ class Board
     puts "   0  1  2  3  4  5  6  7"
     nil
   end
-
-
-
-
- private
+  
+  private
   def place_starting_piece(color, pos)
     self[pos] = Piece.new(color: color, pos: pos,  board: self)
   end

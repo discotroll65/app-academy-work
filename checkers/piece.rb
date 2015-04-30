@@ -15,13 +15,22 @@ class Piece
     @display = 'P'
     @board = options[:board]
   end
-  
+
+  def display
+    return "K" if king?
+    "P"
+  end
+
+  def king?
+    @king
+  end
+
   def inspect
     {
-    display: @display,
-    king: @king,
-    pos: @pos,
-    color: @color
+      display: @display,
+      king: @king,
+      pos: @pos,
+      color: @color
     }
   end
 
@@ -45,7 +54,7 @@ class Piece
     board.place_piece(self, end_pos) #finish the jump
     @pos = end_pos 
 
-    @king ||=  should_promote?(@pos)
+    maybe_promote
     true
   end
 
@@ -53,11 +62,12 @@ class Piece
     return false unless valid_slide?(end_pos)
     board.place_piece(self, end_pos)
     @pos = end_pos 
-    @king ||=  should_promote?(@pos)
+    maybe_promote
     true
   end
 
 private
+
   def get_vector(hit_pos)
     [hit_pos.first - @pos.first, hit_pos.last - @pos.last]
   end
@@ -81,7 +91,7 @@ private
 
   def open_slides
     co_ords = slide_co_ords 
-    co_ords.select{|co_ord| on_board?(co_ord) && board[co_ord].nil?}
+    co_ords.select{|co_ord| on_board?(co_ord) && board[co_ord].nil? }
   end
 
   def possible_hit_coords(slide_co_ords)
@@ -97,15 +107,15 @@ private
     end
   end
 
-  def should_promote?(current_pos)
-    current_row  = current_pos.first
+  def maybe_promote
+    @king ||= true if at_last_row?
+  end
+
+  
+  def at_last_row?
+    current_row  = @pos.first
     last_row_indx =  (@color == :white ) ? 0 : 7
-    if last_row_indx == current_row
-      @display = "K"
-      true
-    else
-      false
-    end
+    last_row_indx == current_row ? true : false
   end
 
   def slide_co_ords
