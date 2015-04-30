@@ -24,6 +24,11 @@ class Board
     self.show_board
   end
 
+  def place_piece(piece, end_pos)
+    self[piece.pos] = nil
+    self[end_pos] = piece
+  end
+
   def square_render(pos, back_color)
     if self[pos].nil?
       "   ".colorize(background: back_color)
@@ -57,7 +62,7 @@ class Board
 
 
  private
-  def place_piece(color, pos)
+  def place_starting_piece(color, pos)
     self[pos] = Piece.new(color: color, pos: pos,  board: self)
   end
 

@@ -34,12 +34,25 @@ class Piece
   end
 
 
+  def perform_jump(end_pos)
+    return false unless valid_jump?(end_pos)
+    vector = [ (end_pos.first - @pos.first)/2, (end_pos.last - @pos.last)/2]
+    victim_pos = [vector.first + @pos.first, vector.last + @pos.last]
 
-  def perform_slide(input_pos)
-    return false unless valid_slide?(input_pos)
-    board[@pos] = nil
-    board[input_pos] = self
-    @pos = input_pos 
+    board.place_piece(self, victim_pos) #kill the dude
+    @pos = victim_pos  
+    
+    board.place_piece(self, end_pos) #finish the jump
+    @pos = end_pos 
+
+    @king ||=  should_promote?(@pos)
+    true
+  end
+
+  def perform_slide(end_pos)
+    return false unless valid_slide?(end_pos)
+    board.place_piece(self, end_pos)
+    @pos = end_pos 
     @king ||=  should_promote?(@pos)
     true
   end
@@ -101,6 +114,10 @@ private
       diff_row, diff_col = diff
       [row + diff_row, col + diff_col] 
     end
+  end
+
+  def valid_jump?(test_pos)
+    open_jumps.include?(test_pos)
   end
 
   def valid_slide?(test_pos)
