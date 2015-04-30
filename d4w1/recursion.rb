@@ -218,3 +218,31 @@ end
 def find_biggest_coin(amount, coins)
   coins.each {|coin| return coin if coin < amount}
 end
+
+# def subsets(array)
+#   return [[]]  if array.empty?
+# 
+#   final = array.dup
+#   sub_of_array = subsets(array[0...-1])
+# 
+#   array.each do |el|
+#     next_subs = subsets( array - [el]  ).reject{|inner_el| inner_el.empty?}
+# 
+#     next_subs.each do |sub|
+#       sub_of_array << sub
+#     end
+#   end
+#   sub_of_array << final
+#   sub_of_array.uniq
+# end
+
+  def subsets(array)
+
+    return [[]] if array.empty?
+    val = array[-1]
+    result = subsets(array[0...-1])
+
+    last_set = subsets(array[0...-1]).map{|el| el << val}
+    result + last_set
+  end
+
