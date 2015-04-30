@@ -48,8 +48,8 @@ class Board
       end
     end
     system 'clear'
-
-    board_display_array.each{|row| puts row}
+    board_display_array.each_with_index{|row, indx | puts "#{indx} " +  row}
+    puts "   0  1  2  3  4  5  6  7"
     nil
   end
 
