@@ -53,7 +53,19 @@ class Piece
     board[@pos] = nil
     board[input_pos] = self
     @pos = input_pos 
+    @king ||=  should_promote?(@pos)
     true
+  end
+
+  def should_promote?(current_pos)
+    current_row  = current_pos.first
+    last_row_indx =  (@color == :white ) ? 0 : 7
+    if last_row_indx == current_row
+      @display = "K"
+      true
+    else
+      false
+    end
   end
 
   def valid_slide?(test_pos)
