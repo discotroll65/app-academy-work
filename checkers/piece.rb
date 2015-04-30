@@ -1,3 +1,5 @@
+require_relative 'checkers_error.rb'
+
 class Piece
   WHITE_DIFFS = [
     [-1, -1], [-1, 1]
@@ -6,19 +8,33 @@ class Piece
     [1, -1], [1, 1]
   ]
   attr_reader :color, :king, :pos, :board
-  attr_accessor :display
 
   def initialize(options)
     @color = options[:color]
     @king = false
     @pos = options[:pos]
-    @display = 'P'
     @board = options[:board]
+  end
+
+  def valid_move_seq?(coords_array)
+    begin
+    duped_board = board.dup
+    duped_self = duped_board[@pos] 
+    duped_self.perform_moves!(coords_array)
+
+    true
+    rescue InvalidMoveError => e
+      return false
+    end
   end
 
   def display
     return "K" if king?
     "P"
+  end
+
+  def dup(duped_board)
+    duped_piece = Piece.new(board: duped_board, pos: @pos, color: @color)
   end
 
   def king?
@@ -58,6 +74,26 @@ class Piece
     true
   end
 
+  def perform_moves(coords_array)
+    if valid_move_seq?(coords_array)
+      perform_moves!(coords_array)
+    else 
+      raise InvalidMoveError.new("Not Legal Move") 
+    end
+  end
+
+  def perform_moves!(coords_array)
+    if  coords_array.size == 1  
+      return true if perform_slide(coords_array.first)
+      raise InvalidMoveError.new("Not legal Slide") 
+    else
+      until coords_array.empty?
+        move = coords_array.shift
+        raise InvalidMoveError.new("Not legal Jump") if !perform_jump(move)       
+      end
+    end
+  end
+
   def perform_slide(end_pos)
     return false unless valid_slide?(end_pos)
     board.place_piece(self, end_pos)
@@ -65,6 +101,8 @@ class Piece
     maybe_promote
     true
   end
+
+
 
 private
 
@@ -129,6 +167,7 @@ private
   def valid_jump?(test_pos)
     open_jumps.include?(test_pos)
   end
+
 
   def valid_slide?(test_pos)
     open_slides.include?(test_pos)
