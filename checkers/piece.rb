@@ -50,6 +50,10 @@ class Piece
 
   def perform_slide(input_pos)
     return false unless valid_slide?(input_pos)
+    board[@pos] = nil
+    board[input_pos] = self
+    @pos = input_pos 
+    true
   end
 
   def valid_slide?(test_pos)

@@ -15,8 +15,13 @@ class Board
     @grid[x][y]
   end
 
+  def []=(pos, piece)
+    x, y = pos
+    @grid[x][y] = piece
+  end
+
   def inspect
-    grid.each{ |row| puts row.join('')}
+    self.show_board
   end
 
   def square_render(pos, back_color)
@@ -52,11 +57,6 @@ class Board
 
 
  private
-  def []=(pos, piece)
-    x, y = pos
-    @grid[x][y] = piece
-  end
-
   def place_piece(color, pos)
     self[pos] = Piece.new(color: color, pos: pos,  board: self)
   end
