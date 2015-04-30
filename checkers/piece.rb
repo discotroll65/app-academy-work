@@ -11,7 +11,12 @@ class Piece
   end
   
   def inspect
-    @display
+    {
+    display: @display,
+    king: @king,
+    pos: @pos,
+    color: @color
+    }
   end
 
 end

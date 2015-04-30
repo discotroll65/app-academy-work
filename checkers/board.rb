@@ -10,10 +10,6 @@ class Board
     setup_board if setup
   end
 
-  def show_board
-
-  end
-
   def [](pos)
     x, y = pos
     @grid[x][y]
@@ -21,6 +17,36 @@ class Board
 
   def inspect
     grid.each{ |row| puts row.join('')}
+  end
+
+  def square_render(pos, back_color)
+    row, col = pos
+    if self[pos].nil?
+      "   ".colorize(background: back_color)
+    else
+      piece = self[pos]
+      " #{piece.display} ".colorize(background: back_color, color: piece.color)
+    end
+  end
+
+  def show_board
+    board_display_array = Array.new(8) {''}
+
+    grid.each_with_index do |row, row_indx|
+      row.each_index do |col_indx|
+        if self.class.dark_square?( [row_indx, col_indx] )
+          board_display_array[row_indx] += 
+            square_render( [row_indx, col_indx], :grey )
+        else
+          board_display_array[row_indx] += 
+            square_render( [row_indx, col_indx], :red )
+        end
+      end
+    end
+    system 'clear'
+
+    board_display_array.each{|row| puts row}
+    nil
   end
 
 
