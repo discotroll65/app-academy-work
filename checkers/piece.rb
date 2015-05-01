@@ -17,10 +17,11 @@ class Piece
   end
 
   def valid_move_seq?(coords_array)
+    duped_coords_array = coords_array.dup
     begin
     duped_board = board.dup
     duped_self = duped_board[@pos] 
-    duped_self.perform_moves!(coords_array)
+    duped_self.perform_moves!(duped_coords_array)
 
     true
     rescue InvalidMoveError => e
@@ -84,7 +85,8 @@ class Piece
 
   def perform_moves!(coords_array)
     if  coords_array.size == 1  
-      return true if perform_slide(coords_array.first)
+      move = coords_array.first
+      return true if perform_slide(move) || perform_jump(move)
       raise InvalidMoveError.new("Not legal Slide") 
     else
       until coords_array.empty?

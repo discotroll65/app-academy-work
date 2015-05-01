@@ -43,15 +43,15 @@ class Game
     puts "Welcome to Checkers"
     
     until false #game.over?
+      begin
       board.show_board
       piece_input = @current_player.get_piece_input
       piece_pos = parse(piece_input).first
       piece = board[piece_pos]
 
       move_input = @current_player.get_move_input
+      binding.pry if piece == board[[2,5]]
       moves = parse(move_input)
-
-      begin
       piece.perform_moves(moves)
 
       rescue InvalidMoveError => e
