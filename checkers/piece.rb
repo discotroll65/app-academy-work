@@ -104,6 +104,22 @@ class Piece
     true
   end
 
+  def open_slides
+    co_ords = slide_co_ords 
+    co_ords.select{|co_ord| on_board?(co_ord) && board[co_ord].nil? }
+  end
+
+  def open_jumps
+    co_ords = slide_co_ords
+    possible_hits = possible_hit_coords(slide_co_ords) 
+    return [] if possible_hits.empty? 
+
+    possible_lands = possible_landings(possible_hits)
+
+    possible_lands.select do |landing_pos|
+      on_board?(landing_pos) && board[landing_pos].nil?
+    end
+  end
 
 
 private
@@ -117,23 +133,7 @@ private
     row.between?(0, 7) && col.between?(0, 7)
   end
   
-  def open_jumps
-    co_ords = slide_co_ords
-    possible_hits = possible_hit_coords(slide_co_ords) 
-    return [] if possible_hits.empty? 
-
-    possible_lands = possible_landings(possible_hits)
-
-    possible_lands.select do |landing_pos|
-      on_board?(landing_pos) && board[landing_pos].nil?
-    end
-  end
-
-  def open_slides
-    co_ords = slide_co_ords 
-    co_ords.select{|co_ord| on_board?(co_ord) && board[co_ord].nil? }
-  end
-
+  
   def possible_hit_coords(slide_co_ords)
     slide_co_ords.reject do |hit_pos|
       board[hit_pos].nil? || board[hit_pos].color == @color

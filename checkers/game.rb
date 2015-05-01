@@ -42,7 +42,8 @@ class Game
   def play
     puts "Welcome to Checkers"
     
-    until false #game.over?
+      binding.pry
+    until over?
       begin
       board.show_board
       piece_input = @current_player.get_piece_input
@@ -66,7 +67,8 @@ class Game
   end
 
   def over?
-
+    return true if board.obliterated?(:white) || board.obliterated?(:red)
+    return true if board.no_more_moves?(:white) || board.no_more_moves?(:red)
   end
 
   def parse(positions_array)

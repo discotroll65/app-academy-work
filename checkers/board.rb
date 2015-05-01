@@ -41,6 +41,27 @@ class Board
     self[end_pos] = piece
   end
 
+  def obliterated?(dead_color)
+    remaining_color = (dead_color == :white) ? :red : :white
+    grid.all? do |row|
+      row.all? do |piece|
+        piece.nil? || piece.color == remaining_color
+      end
+    end
+  end
+
+  def no_more_moves?(stuck_color)
+    grid.all? do |row|
+      row.all? do |piece|
+        if !piece.nil? && piece.color == stuck_color
+          piece.open_slides.empty? && piece.open_jumps.empty?
+        end
+        true
+      end
+    end
+  end
+
+
   def square_render(pos, back_color)
     if self[pos].nil?
       "   ".colorize(background: back_color)
