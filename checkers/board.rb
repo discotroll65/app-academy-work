@@ -65,8 +65,9 @@ class Board
       end
     end
     system 'clear'
-    board_display_array.each_with_index{|row, indx | puts "#{indx} " +  row}
-    puts "   0  1  2  3  4  5  6  7"
+    numbers = (1..8).to_a.reverse
+    board_display_array.each_with_index{|row, indx | puts "#{numbers[indx]} " +  row}
+    puts "   a  b  c  d  e  f  g  h"
     nil
   end
   
