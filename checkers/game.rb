@@ -43,7 +43,6 @@ class Game
     puts "Welcome to Checkers"
     board.show_board
     until over?
-     stuff = board.all_jump_moves(:red)
       begin
       piece_input = @current_player.get_piece_input
       piece_pos = parse(piece_input).first

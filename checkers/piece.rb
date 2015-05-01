@@ -16,19 +16,7 @@ class Piece
     @board = options[:board]
   end
 
-  def valid_move_seq?(coords_array)
-    duped_coords_array = coords_array.dup
-    begin
-    duped_board = board.dup
-    duped_self = duped_board[@pos] 
-    duped_self.perform_moves!(duped_coords_array)
-
-    true
-    rescue InvalidMoveError => e
-      return false
-    end
-  end
-
+  
   def display
     return "K" if king?
     "P"
@@ -79,20 +67,42 @@ class Piece
     if valid_move_seq?(coords_array)
       perform_moves!(coords_array)
     else 
-      raise InvalidMoveError.new("Not Legal Move") 
+      raise InvalidMoveError.new("Not Legal Move Sequence\n
+                                 Are you not making all possible jumps?") 
+    end
+  end
+
+  def valid_move_seq?(coords_array)
+    duped_coords_array = coords_array.dup
+    begin
+      duped_board = board.dup
+      duped_self = duped_board[@pos] 
+      duped_self.perform_moves!(duped_coords_array)
+
+      true
+    rescue InvalidMoveError => e
+      return false
     end
   end
 
   def perform_moves!(coords_array)
     if  coords_array.size == 1  
       move = coords_array.first
-      return true if perform_slide(move) || perform_jump(move)
-      raise InvalidMoveError.new("Not legal Slide") 
+      if (valid_slide?(move) && board.all_jump_moves(@color).empty?) 
+        perform_slide(move)
+        return true
+      else
+        return true if perform_jump(move) && self.open_jumps.empty?
+      end
+      raise InvalidMoveError.new("Not legal Slide\n
+      Are you sure you are making all possible jumps?") 
     else
       until coords_array.empty?
         move = coords_array.shift
         raise InvalidMoveError.new("Not legal Jump") if !perform_jump(move)       
       end
+      raise InvalidMoveError.new("Still jumps left") unless
+      self.open_jumps.empty?
     end
   end
 
