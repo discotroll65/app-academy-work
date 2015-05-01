@@ -55,10 +55,32 @@ class Board
       row.all? do |piece|
         if !piece.nil? && piece.color == stuck_color
           piece.open_slides.empty? && piece.open_jumps.empty?
+        else
+          true
         end
-        true
       end
     end
+  end
+
+  def all_jump_moves(color)
+    all_pieces_of_color = []
+      
+    grid.each do |row|
+      row.each do |piece|
+        if !piece.nil? && piece.color == color
+          all_pieces_of_color << piece
+        end
+      end
+    end
+binding.pry
+    all_jump_moves = all_pieces_of_color.inject([]) do |memo, piece|
+
+      piece.open_jumps.each do |jump|
+        memo << jump
+      end
+      memo
+    end
+
   end
 
 

@@ -41,17 +41,20 @@ class Game
 
   def play
     puts "Welcome to Checkers"
-    
-      binding.pry
+    board.show_board
     until over?
+     stuff = board.all_jump_moves(:red)
       begin
-      board.show_board
       piece_input = @current_player.get_piece_input
       piece_pos = parse(piece_input).first
       piece = board[piece_pos]
 
+      raise InvalidMoveError.new("No piece there") if piece.nil?
+      raise InvalidMoveError.new("Not your turn") if 
+        piece.color != @current_player.color
+      
+
       move_input = @current_player.get_move_input
-      binding.pry if piece == board[[2,5]]
       moves = parse(move_input)
       piece.perform_moves(moves)
 
@@ -62,8 +65,18 @@ class Game
 
       @turn *= -1
       @current_player = @players[@turn]
-
+      board.show_board
     end
+    winning_player = winner
+    puts "#{winning_player.color} wins!"
+
+  end
+
+  def winner
+    return @red_player if board.obliterated?(:white) || 
+      board.no_more_moves?(:white)
+    return @white_player if board.obliterated?(:red) || 
+      board.no_more_moves?(:red)
   end
 
   def over?
