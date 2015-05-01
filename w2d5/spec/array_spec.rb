@@ -59,7 +59,6 @@ describe Array do
     it 'outputs the most profitable days (indices)' do
       expect(answer).to eq( [1, 4] )
     end
-
   end
 
 
