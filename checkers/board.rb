@@ -72,9 +72,8 @@ class Board
         end
       end
     end
-binding.pry
-    all_jump_moves = all_pieces_of_color.inject([]) do |memo, piece|
 
+    all_jump_moves = all_pieces_of_color.inject([]) do |memo, piece|
       piece.open_jumps.each do |jump|
         memo << jump
       end
