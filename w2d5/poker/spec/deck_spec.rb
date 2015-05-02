@@ -15,33 +15,37 @@ describe Deck do
   end
 
   describe '#deal(n)' do
-    let(:cards) { deck.deal(2) }
-
-    before(:each) do
-      deck.instance_variable_set(:@cards, [
-        Card.new(:heart, :deuce),
-        Card.new(:heart, :three),
+    let(:deck) do Deck.new([
+        Card.new(:heart, :nine),
+        Card.new(:heart, :ten),
         Card.new(:heart, :six),
         Card.new(:diamond, :eight),
         Card.new(:spade, :jack)
       ])
     end
 
+    let!(:cards) { deck.deal(2) }
+
+    # before(:each) do
+    #   deck.instance_variable_set(:@cards, [
+    #   ])
+    # end
+
     it 'does not let the dealer deal more than they have' do
       expect {deck.deal(53)}.to raise_error("Not enough cards!")
     end
 
     it 'returns an array of n cards from top of deck' do
-      expect(cards[0].value).to eq(2)
+      expect(cards[0].value).to eq(9)
       expect(cards[0].suit).to eq(:heart)
-      expect(cards[1].value).to eq(3)
+      expect(cards[1].value).to eq(10)
       expect(cards[1].suit).to eq(:heart)
     end
 
     it 'removes the dealt cards from the deck' do
+      expect(deck.cards.count).to eq(3)
       expect(deck.cards).to_not include(cards[0])
       expect(deck.cards).to_not include(cards[1])
-      expect(deck.cards.count).to eq(3)
     end
 
   end

@@ -13,8 +13,12 @@ class Deck
     cards
   end
 
-  def initialize
-    @cards = self.class.build_deck
+  def initialize(cards = [])
+    unless cards.empty?
+      @cards = cards
+    else
+      @cards = self.class.build_deck
+    end
   end
 
   def deal(n)
