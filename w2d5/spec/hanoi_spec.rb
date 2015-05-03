@@ -13,7 +13,7 @@ describe Hanoi do
     expect(other_towers_empty).to eq(true)
   end
 
-  describe '#render' do
+  describe '#render_towers' do
     subject(:game) { Hanoi.new }
 
     it 'makes the 0 index the top of the tower' do
@@ -23,7 +23,7 @@ describe Hanoi do
         [5, 4]
         ])
 
-      expect(game.render).to eq("1 3 4\n2 6 5")
+      expect(game.render_towers).to eq("134\n265")
     end
 
     context 'when tower is empty' do
@@ -34,7 +34,7 @@ describe Hanoi do
           [5, 4]
           ])
 
-        expect(game.render).to eq("1   4\n2 _ 5")
+        expect(game.render_towers).to eq("1 4\n2_5")
       end
     end
   end
@@ -48,7 +48,7 @@ describe Hanoi do
         [],
         [],
       ]  )
-      game.move(1,2)
+      game.move([1,2])
 
       expect(game.towers).to eq([
           [3, 2],
@@ -65,7 +65,7 @@ describe Hanoi do
           [3, 2]
           ])
 
-        expect{ game.move(3, 2)}.to raise_error("Illegal Move")
+        expect{ game.move([3, 2])}.to raise_error("Illegal Move")
       end
 
       it 'Will not let you move from an empty tower' do
@@ -75,7 +75,7 @@ describe Hanoi do
           [3, 2]
           ])
 
-        expect {game.move(1,2)}.to raise_error("Illegal Move")
+        expect {game.move([1,2])}.to raise_error("Illegal Move")
       end
     end
   end

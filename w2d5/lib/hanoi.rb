@@ -11,8 +11,30 @@ class Hanoi
       ]
   end
 
-  def move(start_tower, end_tower)
-    # binding.pry
+  def play
+    system 'clear'
+    puts "Welcome to Towers of Hanoi!"
+    self.render_towers
+    until won?
+      begin
+      print "Enter your move, seperated by commas: >>"
+        move_input = gets.strip.split(',').map{|tower| tower.to_i}
+        self.move(move_input)
+
+      rescue StandardError => e
+        system 'clear'
+        puts e.message
+        self.render_towers
+        retry
+      end
+      system 'clear'
+
+      self.render_towers
+    end
+    puts "You win!"
+  end
+
+  def move((start_tower, end_tower))
     start_tower = @towers[start_tower - 1]
     end_tower = @towers[end_tower - 1]
     raise "Illegal Move" if start_tower.empty?
@@ -31,7 +53,7 @@ class Hanoi
 
   end
 
-  def render
+  def render_towers
     tower_heights = {}
     @towers.each_with_index do |tower, idx|
       tower_heights[idx + 1] = tower.length
@@ -40,7 +62,8 @@ class Hanoi
 
     string_render_array = Array.new(max_height) {''}
 
-    towers_filler = @towers.map do |tower|
+    duped_towers = @towers.deepdup
+    towers_filler = duped_towers.map do |tower|
       until tower.length == max_height
         tower << nil
       end
@@ -50,19 +73,18 @@ class Hanoi
     switchup.each_with_index do |row, row_idx|
       row.each_with_index do |disc|
         if !disc.nil?
-          string_render_array[row_idx] += "#{disc} "
+          string_render_array[row_idx] += "#{disc}"
         elsif row_idx == 0
-          string_render_array[row_idx] += "_ "
+          string_render_array[row_idx] += "_"
         else
-          string_render_array[row_idx] += "  "
+          string_render_array[row_idx] += " "
         end
       end
     end
 
-    string_render_array = string_render_array.map do |row|
-      row.strip
-    end
-    string_render_array.reverse.join("\n")
+    result = string_render_array.reverse.join("\n")
+    puts result
+    result
 
   end
 
@@ -85,4 +107,13 @@ class Array
     end
     transposition
   end
+
+  def deepdup
+    self.map{|el| el.is_a?(Array) ? el.deepdup : el}
+  end
+end
+
+if __FILE__ == $PROGRAM_NAME
+  game = Hanoi.new
+  game.play
 end
