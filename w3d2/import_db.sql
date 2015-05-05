@@ -58,7 +58,7 @@ INSERT INTO
 VALUES
   (1, NULL, 2, 'read a book'),
   (1, 1, 3, 'go to school'),
-  (1, 2, 1, 'those are good suggestions');
+  (1, 1, 1, 'those are good suggestions');
 
 INSERT INTO
   questions_follows (user_id, question_id)

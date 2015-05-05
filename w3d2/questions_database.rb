@@ -13,5 +13,4 @@ class QuestionsDatabase < SQLite3::Database
   def self.execute(*args, &blk)
     instance.execute(*args, &blk)
   end
-
 end
