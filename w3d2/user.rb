@@ -1,4 +1,5 @@
 require_relative 'questions_database.rb'
+require 'pry'
 
 class User
   def initialize(attrs = {})
@@ -11,11 +12,21 @@ class User
       SELECT
         *
       FROM
-        users
+        users;
     SQL
 
-    result.map{|user_row| User.new(user_row)}
+    results.map{|user_row| User.new(user_row)}
   end
 
-  
+  def self.find_by_id(id)
+    result = QuestionsDatabase.execute(<<-SQL, id)
+      SELECT
+        *
+      FROM
+        users
+      WHERE
+        id = ?;
+    SQL
+    User.new(result[0])
+  end
 end

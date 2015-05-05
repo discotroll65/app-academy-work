@@ -15,7 +15,19 @@ class Reply
         replies
     SQL
 
-    result.map{|reply_row| Reply.new(reply_row)}
+    results.map{|reply_row| Reply.new(reply_row)}
+  end
+
+  def self.find_by_id(id)
+    result = QuestionsDatabase.execute(<<-SQL, id)
+      SELECT
+        *
+      FROM
+        replies
+      WHERE
+        id = ?;
+    SQL
+    Reply.new(result[0])
   end
 
 
