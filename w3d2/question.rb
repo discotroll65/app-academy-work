@@ -1,6 +1,8 @@
 require_relative 'questions_database.rb'
 require_relative 'user'
 require_relative 'reply'
+require_relative 'question_follow'
+require_relative 'question_like'
 require 'pry'
 
 class Question
@@ -49,14 +51,53 @@ class Question
     results.map{|question_row| Question.new(question_row)}
   end
 
+  def self.most_liked(n)
+    QuestionLike.most_liked_questions(n)
+  end
+
+  def self.most_followed(n)
+    QuestionFollow.most_followed_questions(n)
+  end
+
   def author
     User.find_by_id(author_id)
+  end
+
+  def likers
+    QuestionLike.likers_for_question_id(id)
+  end
+
+  def num_likes
+    QuestionLike.num_likes_for_question_id(id)
   end
 
   def replies
     Reply.find_by_question_id(id)
   end
 
-  
+  def followers
+    QuestionFollow.followers_for_question_id(id)
+  end
 
+  def save
+    if id.nil?
+      QuestionsDatabase.execute(<<-SQL, title: title, body: body, author_id: author_id)
+        INSERT INTO
+          questions(title, body, author_id)
+        VALUES
+          (:title, :body, :author_id);
+      SQL
+      @id = QuestionsDatabase.instance.last_insert_row_id
+    else
+      QuestionsDatabase.execute(<<-SQL, title: title, body: body, author_id: author_id, id: id)
+        UPDATE
+          questions
+        SET
+          title = :title, body = :body, author_id = :author_id
+        WHERE
+          id = :id;
+      SQL
+    end
+    self
+  end
 end

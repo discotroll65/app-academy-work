@@ -88,4 +88,26 @@ class Reply
 
     results.map{|reply_row| Reply.new(reply_row)}
   end
+
+  def save
+    if id.nil?
+      QuestionsDatabase.execute(<<-SQL, question_id: question_id, parent_id: parent_id, author_id: author_id, body: body)
+        INSERT INTO
+          replies(question_id, parent_id, author_id, body)
+        VALUES
+          (:question_id, :parent_id, :author_id, :body);
+      SQL
+      @id = QuestionsDatabase.instance.last_insert_row_id
+    else
+      QuestionsDatabase.execute(<<-SQL, question_id: question_id, parent_id: parent_id, author_id: author_id, body: body, id: id)
+        UPDATE
+          replies
+        SET
+          question_id = :question_id, parent_id = :parent_id, author_id = :author_id, body = :body
+        WHERE
+          id = :id;
+      SQL
+    end
+    self
+  end
 end

@@ -1,5 +1,7 @@
 require_relative 'questions_database.rb'
 require_relative 'question.rb'
+require_relative 'question_follow'
+require_relative 'question_like'
 require 'pry'
 
 class User
@@ -55,5 +57,39 @@ class User
     Reply.find_by_author_id(id)
   end
 
+  def average_karma
+    results = nil
+  end
 
+  def followed_questions
+    QuestionFollow.followed_questions_for_user_id(id)
+  end
+
+  def liked_questions
+    QuestionLike.liked_questions_for_user_id(id)
+  end
+
+  def save
+    if id.nil?
+      QuestionsDatabase.execute(<<-SQL, fname: fname, lname: lname)
+        INSERT INTO
+          users(fname, lname)
+        VALUES
+          (:fname, :lname);
+      SQL
+
+      @id = QuestionsDatabase.instance.last_insert_row_id
+    else
+      QuestionsDatabase.execute(<<-SQL, fname: fname, lname: lname, id: id)
+        UPDATE
+          users
+        SET
+          fname = :fname , lname = :lname
+        WHERE
+          id = :id;
+      SQL
+    end
+
+    self
+  end
 end
