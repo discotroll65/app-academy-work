@@ -100,4 +100,46 @@ class Question
     end
     self
   end
+
+
+
+
+
+  # def save
+  #   table_name = self.class.name.downcase.pluralize
+  #
+  #   cols_array = self.instance_variables.inject([]) do |memo, col_name|
+  #     memo << col_name.to_s[1..-1]
+  #   end
+  #
+  #   cols_array -= ["id"]
+  #
+  #   args = cols_array.map { |col_val| self.send(col_val.to_sym) }
+  #   cols_string = cols_array.join(', ')
+  #   q_marks_string = ('?, ' * args.count)[0..-3]
+  #
+  #   if id.nil?
+  #     QuestionsDatabase.execute(<<-SQL, cols_string, *args)
+  #       INSERT INTO
+  #         (#{table_name}(#{cols_string}))
+  #       VALUES
+  #         (#{q_marks_string});
+  #     SQL
+  #     @id = QuestionsDatabase.instance.last_insert_row_id
+  #   else
+  #     QuestionsDatabase.execute(<<-SQL, title: title, body: body, author_id: author_id, id: id)
+  #       UPDATE
+  #         questions
+  #       SET
+  #         title = :title, body = :body, author_id = :author_id
+  #       WHERE
+  #         id = :id;
+  #     SQL
+  #   end
+  #   self
+  # end
+  #
+
+  
+
 end
