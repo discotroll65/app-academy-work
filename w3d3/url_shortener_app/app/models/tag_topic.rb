@@ -16,7 +16,7 @@ class TagTopic < ActiveRecord::Base
 
   def n_most_popular_links(n)
 
-    ShortenedUrl.find_by_sql([<<-SQL, limit: n])
+    ShortenedUrl.find_by_sql([<<-SQL, {limit: n, tag_id: id}])
       Select
         shortened_urls.short_url
       FROM
@@ -28,7 +28,7 @@ class TagTopic < ActiveRecord::Base
       JOIN
         tag_topics ON taggings.tag_id = tag_topics.id
       WHERE
-        tag_topics.id = 1
+        tag_topics.id = :tag_id
       GROUP BY
         shortened_urls.short_url
       ORDER BY
@@ -36,7 +36,7 @@ class TagTopic < ActiveRecord::Base
       LIMIT
         :limit;
     SQL
-    
+
     # ShortenedUrl
       # .select(:short_url)
       # .from(:shortened_urls)
