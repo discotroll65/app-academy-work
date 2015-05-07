@@ -21,4 +21,20 @@ class Question < ActiveRecord::Base
     source: :responses
   )
 
+  def results
+
+    raw_data = answer_choices
+      .select('answer_choices.text, COUNT(respondent_id) AS num_votes')
+      .joins("LEFT OUTER JOIN responses ON responses.answer_choice_id = answer_choices.id")
+      .group("answer_choices.id")
+
+
+
+    question_results = raw_data.map do |answer_choice|
+      [answer_choice.text, answer_choice.num_votes]
+    end
+
+    question_results.to_h
+  end
+
 end

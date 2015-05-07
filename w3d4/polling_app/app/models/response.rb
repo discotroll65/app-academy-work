@@ -24,11 +24,7 @@ class Response < ActiveRecord::Base
   )
 
   def sibling_responses
-    if id.nil?
-      question.responses
-    else
-      question.responses.where("responses.id != ?", id)
-    end
+    question.responses.where(":id IS NULL OR responses.id != :id ", id: id)
   end
 
   private
