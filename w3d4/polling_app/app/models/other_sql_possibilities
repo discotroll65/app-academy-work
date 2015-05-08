@@ -1,0 +1,71 @@
+SELECT
+  sibs_response.*
+FROM
+  responses
+JOIN
+  answer_choices ON answer_choices.id = responses.answer_choice_id
+JOIN
+  questions ON answer_choices.question_id = questions.id AND answer_choices.id = 1
+JOIN
+  answer_choices AS sibs_answers ON questions.id = sibs_answers.question_id
+JOIN
+  responses AS sibs_response ON sibs_answers.id = sibs_response.answer_choice_id
+
+
+
+
+
+
+
+
+  def sibling_responses
+    # question.responses.where(":id IS NULL OR responses.id != :id ", id: id)
+    sibs_response = Response.select('sibs_responses.*')
+      .joins('JOIN answer_choices ON responses.answer_choice_id = answer_choices.id')
+      .joins("JOIN questions ON questions.id = answer_choices.question_id AND answer_choices.id = #{answer_choice_id}")
+      .joins('JOIN answer_choices AS sibs_answers ON sibs_answers.question_id = questions.id')
+      .joins('JOIN responses AS sibs_responses ON sibs_responses.answer_choice_id = sibs_answers.id')
+      #.where(":id IS NULL OR responses.id != :id ", id: id)
+    binding.pry
+    sibs_response
+  end
+
+  def respondent_has_not_already_answered_question
+    if sibling_responses.exists?(respondent_id: respondent_id)
+      errors[:respondent_id] << "can't answer a question twice."
+    end
+  end
+
+
+
+
+
+
+
+
+  sib_responses = Response
+  .find_by_sql([<<-SQL, questions_answer: answer_choice_id, id: id ])
+    SELECT
+      responses.*
+    FROM
+      responses
+    JOIN
+      answer_choices ON answer_choices.id = responses.answer_choice_id
+    JOIN
+      questions ON questions.id = answer_choices.question_id
+    WHERE
+      questions.id IN(
+        SELECT
+          questions.id
+        FROM
+          questions
+        JOIN
+          answer_choices ON questions.id = answer_choices.question_id
+        WHERE
+          answer_choices.id = :questions_answer
+      )
+    AND
+      (:id IS NULL OR responses.id != :id)
+  SQL
+
+  sib_responses
