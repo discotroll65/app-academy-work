@@ -55,7 +55,24 @@ end
 module Associatable
   # Phase IIIb
   def belongs_to(name, options = {})
-    # ...
+    options = BelongsToOptions.new(name, options)
+
+    define_method(name) do
+      results = DBConnection.instance.execute(<<-SQL, self.send(options.foreign_key))
+        SELECT
+          *
+        FROM
+          #{options.table_name}
+        WHERE
+          #{options.table_name}.#{options.primary_key} = ?
+      SQL
+
+      if results == []
+        nil
+      else
+        options.model_class.new(results[0])
+      end
+    end
   end
 
   def has_many(name, options = {})
