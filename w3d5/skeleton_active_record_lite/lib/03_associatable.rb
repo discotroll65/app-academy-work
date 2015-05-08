@@ -76,7 +76,22 @@ module Associatable
   end
 
   def has_many(name, options = {})
-    # ...
+    options = HasManyOptions.new(name, self.name,  options)
+    define_method(name) do
+      results = DBConnection.instance.execute(<<-SQL, self.send(options.primary_key))
+        SELECT
+          *
+        FROM
+          #{options.table_name}
+        WHERE
+          #{options.table_name}.#{options.foreign_key} = ?
+      SQL
+      relations = []
+      results.each do |result|
+        relations << options.model_class.new(result)
+      end
+      relations
+    end
   end
 
   def assoc_options
