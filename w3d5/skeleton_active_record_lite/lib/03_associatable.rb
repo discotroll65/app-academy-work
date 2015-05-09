@@ -73,6 +73,7 @@ module Associatable
         options.model_class.new(results[0])
       end
     end
+    assoc_options[name] = options
   end
 
   def has_many(name, options = {})
@@ -94,8 +95,9 @@ module Associatable
     end
   end
 
+
   def assoc_options
-    # Wait to implement this in Phase IVa. Modify `belongs_to`, too.
+    @assoc_options ||= {}
   end
 end
 
