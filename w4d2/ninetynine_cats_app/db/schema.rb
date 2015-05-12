@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20150512174246) do
   enable_extension "plpgsql"
 
   create_table "cats", force: :cascade do |t|
-    t.integer  "birth_date",            null: false
+    t.date     "birth_date",            null: false
     t.string   "color",                 null: false
     t.string   "name",                  null: false
     t.string   "sex",         limit: 1, null: false

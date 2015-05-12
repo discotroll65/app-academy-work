@@ -7,4 +7,8 @@ class CatsController < ApplicationController
   def show
     @cat = Cat.find(params[:id])
   end
+
+  def new
+    @cat = Cat.new
+  end
 end
