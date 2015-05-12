@@ -1,11 +1,17 @@
 class Cat < ActiveRecord::Base
+  CAT_COLORS = ["white", "orange", "black", "calico"]
+
   validates :birth_date, :name, :description, presence: true
   validates :sex, inclusion: { in: ["m", "f"] }, presence: true
   validates(
     :color,
-    inclusion: { in: ["white", "orange", "black", "calico"] },
+    inclusion: { in: CAT_COLORS },
     presence: true
   )
+
+  def self.colors
+    CAT_COLORS
+  end
 
   def age
     Time.now.year - birth_date.year
