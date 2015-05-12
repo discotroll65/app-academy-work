@@ -29,3 +29,40 @@ name: "Maranda",
 sex: 'f',
 description: 'Maranda is older than the mountains. She has digestion problems'
 )
+
+CatRentalRequest.create!(
+cat_id: 1,
+start_date: Date.today,
+end_date: Date.today >> 2
+)
+
+# DIFFERENT CAT
+CatRentalRequest.create!(
+cat_id: 2,
+start_date: Date.today >> 2,
+end_date: Date.today >> 3
+)
+
+# OVERLAP with request 1
+CatRentalRequest.create!(
+cat_id: 1,
+start_date: Date.today,
+end_date: Date.today >> 2,
+status: 'APPROVED'
+)
+
+# NO OVERLAP
+CatRentalRequest.create!(
+cat_id: 1,
+start_date: Date.today >> 20,
+end_date: Date.today >> 22,
+status: 'APPROVED'
+)
+
+# OVERLAP with request 1
+CatRentalRequest.create!(
+cat_id: 1,
+start_date: Date.today >> 1,
+end_date: Date.today >> 3,
+status: 'APPROVED'
+)
