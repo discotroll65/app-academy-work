@@ -8,16 +8,13 @@
 </head>
 <body>
 
-  <%= flash[:success] unless flash[:success].nil? %>
-
-  <% flash[:errors].try(:each) do |error| %>
-    <ul>
-      <li><%= error %></li>
-    </ul>
+  <% if current_user %>
+    <h1>Hello, <%= current_user.user_name %>.</h1>
+    <%= button_to "Log out", session_url, method: :delete %>
   <% end %>
-  <br>
 
-<%= yield %>
+  <%= render "layouts/feedback" %>
+  <%= yield %>
 
 </body>
 </html>

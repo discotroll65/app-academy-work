@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :ensure_not_logged_in, only: [:new]
+
   def new
     @user = User.new
   end
@@ -8,6 +10,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = "Successfully Registered"
+      login!(@user)
       redirect_to cats_url
     else
       flash.now[:errors] = @user.errors.full_messages

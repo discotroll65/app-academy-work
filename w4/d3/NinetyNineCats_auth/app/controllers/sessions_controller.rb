@@ -1,6 +1,9 @@
 class SessionsController < ApplicationController
+  before_action :ensure_not_logged_in, only: [:new]
+
   def new
     @user = User.new
+    render :new
   end
 
   def create
@@ -10,12 +13,18 @@ class SessionsController < ApplicationController
     )
     if @user.nil?
       @user = User.new(user_params)
-      flash.now[:errors] = "User name/password incorrect"
+      flash.now[:errors] = []
+      flash.now[:errors]  << "User name/password incorrect"
       render :new
     else
       flash[:success] = "Logged in!"
-      session[:session_token] = @user.reset_session_token!
+      login!(@user)
       redirect_to cats_url
     end
+  end
+
+  def destroy
+    logout
+    redirect_to new_session_url
   end
 end
