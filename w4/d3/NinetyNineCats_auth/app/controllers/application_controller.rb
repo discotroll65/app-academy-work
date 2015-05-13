@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   # protect_from_forgery with: :exception
 
-  helper_method :current_user
+  helper_method :current_user, :user_owns_cat?
 
   def current_user
     user = User.find_by(session_token: session[:session_token])
@@ -11,6 +11,10 @@ class ApplicationController < ActionController::Base
 
   def login!(user)
     session[:session_token] = user.reset_session_token!
+  end
+
+  def user_owns_cat?(cat)
+    cat.user_id == current_user.id
   end
 
   def logout
@@ -31,4 +35,12 @@ class ApplicationController < ActionController::Base
       params.require(:user).permit(:user_name, :password)
     end
 
+    def ensure_owner_edits
+      @cat = Cat.find(params[:id])
+      unless @cat.user_id == current_user.id
+        flash[:errors] = []
+        flash[:errors] << "You don't own #{@cat.name}!"
+        redirect_to cat_url(@cat)
+      end
+    end
 end

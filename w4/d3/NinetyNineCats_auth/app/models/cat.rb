@@ -1,6 +1,8 @@
 require 'action_view'
 
 class Cat < ActiveRecord::Base
+  belongs_to :user
+
   include ActionView::Helpers::DateHelper
 
   CAT_COLORS = %w(black white orange brown)
@@ -16,6 +18,7 @@ class Cat < ActiveRecord::Base
     :color,
     :name,
     :sex,
+    :user_id,
     presence: true
   )
 
