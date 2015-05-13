@@ -5,13 +5,20 @@ class CatRentalRequest < ActiveRecord::Base
   validates(
     :status, presence: true, inclusion: {in: %w[PENDING APPROVED DENIED]}
   )
+  #validate :cat_chosen
   validate :no_overlapping_approved_requests
 
   after_initialize :set_status
 
+  def cat_chosen
+    if cat_id == 0
+      errors.add(:cat_chosen, "Must choose cat")
+    end
+  end
+
   def overlapping_requests
     CatRentalRequest
-    .where("cat_id = ? AND id != ? ", cat.id, id)
+    .where("cat_id = ? AND id != ? ", cat_id, id)
     .where(
       "(start_date BETWEEN :start_date AND :end_date) OR
       (end_date BETWEEN :start_date AND :end_date)",
@@ -24,7 +31,7 @@ class CatRentalRequest < ActiveRecord::Base
   end
 
   def no_overlapping_approved_requests
-    if !overlapping_approved_requests.empty? && status == "APPROVED"
+    unless overlapping_approved_requests.empty?
       errors.add(:overlap, "Cat already rented out during part of that period")
     end
   end
