@@ -48,4 +48,12 @@ class CatsController < ApplicationController
     params.require(:cat)
       .permit(:age, :birth_date, :color, :description, :name, :sex)
   end
+
+  def ensure_owner_edits
+    @cat = Cat.find(params[:id])
+    unless @cat.user_id == current_user.id
+      flash[:errors] = ["You don't own #{@cat.name}!"]
+      redirect_to cat_url(@cat)
+    end
+  end
 end

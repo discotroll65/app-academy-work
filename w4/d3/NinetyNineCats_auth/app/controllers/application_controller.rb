@@ -34,13 +34,4 @@ class ApplicationController < ActionController::Base
     def user_params
       params.require(:user).permit(:user_name, :password)
     end
-
-    def ensure_owner_edits
-      @cat = Cat.find(params[:id])
-      unless @cat.user_id == current_user.id
-        flash[:errors] = []
-        flash[:errors] << "You don't own #{@cat.name}!"
-        redirect_to cat_url(@cat)
-      end
-    end
 end

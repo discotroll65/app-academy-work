@@ -13,11 +13,10 @@ class SessionsController < ApplicationController
     )
     if @user.nil?
       @user = User.new(user_params)
-      flash.now[:errors] = []
-      flash.now[:errors]  << "User name/password incorrect"
+      flash.now[:errors] = [ "User name/password incorrect"]
       render :new
     else
-      flash[:success] = "Logged in!"
+      flash[:success] = ["Logged in!"]
       login!(@user)
       redirect_to cats_url
     end

@@ -20,6 +20,7 @@
       link_to "Request #{@cat.name}", new_cat_rental_request_url
     end
       %>
+<%= link_to "Back to cats", cats_url %>
 
 <h2>Rental Requests</h2>
 <table>
@@ -27,6 +28,7 @@
     <th>Start Date</th>
     <th>End Date</th>
     <th>Status</th>
+    <th>Requester</th>
   </tr>
   <% @cat.rental_requests.order("start_date").each do |req| %>
     <%= render "req_tr", req: req,  cat: @cat %>

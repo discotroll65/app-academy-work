@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   attr_reader :password
   has_many :cats
+  has_many :cat_rental_requests
 
   validates :user_name, :password_digest, :session_token, presence: true
   validates :user_name, :session_token, uniqueness: true
