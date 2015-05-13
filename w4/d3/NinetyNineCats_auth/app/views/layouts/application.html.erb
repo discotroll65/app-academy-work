@@ -8,6 +8,15 @@
 </head>
 <body>
 
+  <%= flash[:success] unless flash[:success].nil? %>
+
+  <% flash[:errors].try(:each) do |error| %>
+    <ul>
+      <li><%= error %></li>
+    </ul>
+  <% end %>
+  <br>
+
 <%= yield %>
 
 </body>
