@@ -31,13 +31,26 @@ class CatRentalRequest < ActiveRecord::Base
   end
 
   def no_overlapping_approved_requests
-    unless overlapping_approved_requests.empty?
+    unless overlapping_approved_requests.empty? || self.status == "DENIED"
       errors.add(:overlap, "Cat already rented out during part of that period")
     end
   end
 
-protected
+# protected
   def set_status
     self.status ||= "PENDING"
   end
+
+  def approve!
+    self.update!(status: "APPROVED")
+    conflicts = overlapping_requests
+    conflicts.each do |conflict|
+      conflict.deny!
+    end
+  end
+
+  def deny!
+    self.update!(status: "DENIED")
+  end
+
 end

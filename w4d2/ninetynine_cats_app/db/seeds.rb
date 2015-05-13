@@ -48,7 +48,7 @@ CatRentalRequest.create!(
 cat_id: 1,
 start_date: Date.today,
 end_date: Date.today >> 2,
-status: 'APPROVED'
+status: 'PENDING'
 )
 
 # NO OVERLAP
@@ -56,7 +56,7 @@ CatRentalRequest.create!(
 cat_id: 1,
 start_date: Date.today >> 20,
 end_date: Date.today >> 22,
-status: 'APPROVED'
+status: 'PENDING'
 )
 
 # OVERLAP with request 1
@@ -64,5 +64,5 @@ CatRentalRequest.create!(
 cat_id: 1,
 start_date: Date.today >> 1,
 end_date: Date.today >> 3,
-status: 'APPROVED'
+status: 'PENDING'
 )

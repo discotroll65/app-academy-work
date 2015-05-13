@@ -13,7 +13,7 @@ class CatRentalRequestsController < ApplicationController
     @cats = Cat.all
     @request = CatRentalRequest.new(cat_rental_request_params)
     if @request.save
-      redirect_to cat_cat_rental_requests_url(params[:cat_rental_request][:cat_id])
+      redirect_to cat_url(params[:cat_rental_request][:cat_id])
     else
       flash.now[:errors] = @request.errors.full_messages
       render :new
