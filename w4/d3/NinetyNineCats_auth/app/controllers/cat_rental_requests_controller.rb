@@ -1,6 +1,7 @@
 class CatRentalRequestsController < ApplicationController
   before_action :ensure_logged_in
   before_action :ensure_owner_approves, only: [:approve, :deny]
+  before_action :ensure_owner_does_not_rent_own_cat, only: [:create]
 
 
   def approve
@@ -16,6 +17,15 @@ class CatRentalRequestsController < ApplicationController
     else
       flash.now[:errors] = @rental_request.errors.full_messages
       render :new
+    end
+  end
+
+  def ensure_owner_does_not_rent_own_cat
+    @rental_request = CatRentalRequest.new(cat_rental_request_params)
+    cat = @rental_request.cat
+    if current_user.cats.include?(cat)
+      flash[:errors] = ["Can't rent your own cat, dummy"]
+      redirect_to cat_url(cat)
     end
   end
 
