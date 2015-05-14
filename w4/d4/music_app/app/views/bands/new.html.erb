@@ -1,0 +1,7 @@
+<h1>Add a Band</h1>
+
+<form action="/bands" method="post">
+  <%= csrf_tag %>
+  <input type="text" name="band[name]" value=" <%= @band.name %> ">
+  <input type="submit" value="Create band">
+</form>

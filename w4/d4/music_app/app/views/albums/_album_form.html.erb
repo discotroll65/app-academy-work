@@ -1,0 +1,24 @@
+<form action=" <%= albums_url %> " method="post">
+  <%= csrf_tag %>
+
+  <label>Band
+    <select name="album[band_id]">
+      <option value="<%= band.id %>" checked> <%= band.name %> </option>
+    </select>
+  </label>
+
+  <label>Album Name
+    <input type="test" name="album[name]" value="<%= album.name %>">
+  </label>
+
+  <label>Live session
+    <input type="radio" name="album[recording_style]" value="live">
+  </label>
+
+  <label>Studio session
+    <input type="radio" name="album[recording_style]" value="studio">
+  </label>
+
+  <input type="submit" value="Create Album">
+
+</form>

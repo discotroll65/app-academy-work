@@ -1,0 +1,49 @@
+<form action="<%= tracks_url %>" method="post">
+  <%= csrf_tag %>
+  <label>Album
+    <select name="track[album_id]">
+      <option value="<%= album.id %>" checked> <%= album.name %> </option>
+    </select>
+  </label>
+
+  </br>
+
+  <label>Track Name
+    <input type="test" name="track[name]" value="<%= track.name %>">
+  </label>
+
+  </br>
+
+  <label>
+    <input
+    type="radio"
+    name="track[track_type]"
+    value="regular"
+    <%= (track.track_type.nil? || track.track_type == "regular") ? "checked" : "" %>
+    >Regular Track
+  </label>
+
+  </br>
+
+  <label>
+    <input
+    type="radio"
+    name="track[track_type]"
+    value="bonus"
+    <%= (track.track_type == "bonus") ? "checked" : "" %>
+    >Bonus Track
+  </label>
+
+  </br>
+
+  <label>Track Lyrics </br>
+    <textarea
+    name="track[lyrics]"
+    cols="80" rows='5'
+    ><%= track.lyrics.nil? ? "Write the lyrics here!" : track.lyrics %></textarea>
+  </label>
+
+  </br>
+
+  <input type="submit" value="Add Track">
+</form>

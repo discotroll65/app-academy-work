@@ -1,0 +1,9 @@
+<h1>Signup</h1>
+
+<%= render "shared/email_password_form",
+ url: user_url,
+ user: @user,
+ button_message: "Signup" %>
+
+
+ <%= link_to "Login", new_session_url %>

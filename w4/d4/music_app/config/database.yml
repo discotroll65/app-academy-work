@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: music_app_development
+  host: 127.0.0.1
+  pool: 5
+  timeout: 5000

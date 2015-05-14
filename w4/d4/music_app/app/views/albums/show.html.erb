@@ -1,0 +1,9 @@
+<h1> Album: <%= @album.name %>, by <%= link_to @band.name, band_url(@band) %> </h1>
+
+<h2>Tracks:</h2>
+
+<ul>
+  <%= render @tracks %>
+</ul>
+
+<h3> <%= link_to "Add track to album", new_album_track_url(@album) %> </h3>
