@@ -9,6 +9,7 @@ class CatsController < ApplicationController
 
   def show
     @cat = Cat.find(params[:id])
+    @dummy_request = CatRentalRequest.new()
     render :show
   end
 

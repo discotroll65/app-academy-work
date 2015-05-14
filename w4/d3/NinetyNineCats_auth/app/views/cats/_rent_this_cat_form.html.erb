@@ -1,0 +1,10 @@
+<form action="<%= cat_rental_requests_url %>" method="post">
+  <input type="hidden" method="authenticity_token" value="form_authenticity_token">
+
+  <input type="hidden" name="cat_rental_request[cat_id]"  value="<%= params[:id] %>">
+
+  <%= render "shared/request_date_fields", request: request %>
+
+  <input type="submit" value="Request <%= cat.name %>">
+
+</form>

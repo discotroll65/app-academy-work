@@ -15,8 +15,8 @@ class CatRentalRequestsController < ApplicationController
     if @rental_request.save
       redirect_to cat_url(@rental_request.cat)
     else
-      flash.now[:errors] = @rental_request.errors.full_messages
-      render :new
+      flash[:errors] = @rental_request.errors.full_messages
+      redirect_to :back
     end
   end
 
@@ -25,7 +25,7 @@ class CatRentalRequestsController < ApplicationController
     cat = @rental_request.cat
     if current_user.cats.include?(cat)
       flash[:errors] = ["Can't rent your own cat, dummy"]
-      redirect_to cat_url(cat)
+      redirect_to :back
     end
   end
 

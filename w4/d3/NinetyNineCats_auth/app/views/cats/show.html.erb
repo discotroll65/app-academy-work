@@ -1,3 +1,5 @@
+<%= link_to "Back to cats", cats_url %>
+<br>
 <h1><%= @cat.name %></h1>
 
 <table>
@@ -14,13 +16,13 @@
 </table>
 
 
-<%= if user_owns_cat?(@cat)
-      link_to "Edit #{@cat.name}", edit_cat_url(@cat)
-    else
-      link_to "Request #{@cat.name}", new_cat_rental_request_url
-    end
-      %>
-<%= link_to "Back to cats", cats_url %>
+<% if user_owns_cat?(@cat) %>
+  <%= link_to "Edit #{@cat.name}", edit_cat_url(@cat) %>
+<% else %>
+  <h2> Rent <%= @cat.name %></h2>
+  <%= render "rent_this_cat_form", cat: @cat, request: @dummy_request %>
+<% end %>
+
 
 <h2>Rental Requests</h2>
 <table>

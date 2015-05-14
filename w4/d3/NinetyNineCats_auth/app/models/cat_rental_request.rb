@@ -8,7 +8,7 @@ class CatRentalRequest < ActiveRecord::Base
     foreign_key: :user_id
   )
 
-  after_initialize :assign_pending_status
+  after_initialize :assign_pending_status#, :start_must_come_before_end
 
   validates(
     :cat_id,
@@ -156,6 +156,10 @@ SQL
   end
 
   def start_must_come_before_end
+    if start_date.nil? || end_date.nil?
+      errors[:start_date] << "start date is nil"
+      return
+    end
     return if start_date < end_date
     errors[:start_date] << "must come before end date"
     errors[:end_date] << "must come after start date"
