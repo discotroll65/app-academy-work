@@ -2,10 +2,17 @@
   <%= link_to @album.name, album_url(@album) %>,
   by <%= link_to @band.name, band_url(@band) %>
 </h1>
+
 <h2> This is a <%= @track.track_type %> track</h2>
+
 <h3>Lyrics</h3>
+
 <p>
   <pre>
     <%= @track.lyrics %>
   </pre>
 </p>
+
+<%= render "notes/note_form", note: @note %>
+
+<%= render @notes , author: current_user%>

@@ -1,0 +1,10 @@
+<h1> Add a note to this track</h1>
+
+<form action="<%= notes_url %>" method="post">
+  <%= csrf_tag %>
+  <input type="hidden" name="note[track_id]" value="<%= params[:id] %>">
+  <textarea rows="5" cols="30" name="note[body]"
+  ><%= note.body.nil? ? "" : note.body  %></textarea>
+  <input type="submit" value="Add note to this track">
+
+</form>

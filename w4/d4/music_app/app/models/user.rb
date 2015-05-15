@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   attr_reader :password
+  has_many :notes
 
   validates :email, :session_token, presence: true, uniqueness: true
   validates :password_digest, presence: true
