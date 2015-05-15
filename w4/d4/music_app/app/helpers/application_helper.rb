@@ -11,8 +11,9 @@ module ApplicationHelper
   end
 
   def ugly_lyrics(lyrics)
+
     lyrics_array = lyrics.split("\r\n")
-    ugly_lyrics_array = lyrics_array.map{|line| "&#9835; #{h(line)}"  }
-    ugly_lyrics_string = ugly_lyrics_array.join("\r\n")
+    ugly_lyrics_array = lyrics_array.map{|line| "&#9835;" + " " + h(line)  }
+    ugly_lyrics_string = ugly_lyrics_array.join("\r\n").html_safe
   end
 end
