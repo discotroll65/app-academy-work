@@ -3,7 +3,7 @@
     <% if post.url != "" %>
       <a href="<%= post.url %>"> <%= post.title %> </a>
     <% else %>
-      <%= link_to(post.title, post_url(post)) %>
+      <%= link_to(post.title, sub_post_url(params[:id], post)) %>
     <% end %>
   </h3>
 </p>

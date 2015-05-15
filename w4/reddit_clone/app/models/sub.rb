@@ -5,8 +5,8 @@ class Sub < ActiveRecord::Base
     foreign_key: :moderator_id,
     primary_key: :id
   )
-
-  has_many :posts
+  has_many :post_subs
+  has_many :posts, through: :post_subs
 
   validates :title, :description, presence: true
   validates :title, uniqueness: true

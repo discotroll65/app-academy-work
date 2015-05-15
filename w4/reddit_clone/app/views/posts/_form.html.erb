@@ -16,6 +16,20 @@
     <input type="text" name="post[url]" value="<%= post.url %>">
   </label>
 
+  <label>Subforums to post to:
+    <% all_subs.each do |sub| %>
+    <label><%= sub.title %>
+      <input type="checkbox"
+        name="post[sub_ids][]"
+        value="<%= sub.id %>"
+        <%= "checked" if post_subs.include?(sub) ||
+            sub.id == passed_in_sub_id
+        %>
+      >
+    </label>
+    <% end %>
+  </label>
+
   <label>Content
     <textarea rows="8" cols="25" name="post[content]"
     ><%= post.content %></textarea>

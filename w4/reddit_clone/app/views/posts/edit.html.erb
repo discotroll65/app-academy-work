@@ -5,6 +5,8 @@
     url: post_url(@post),
     button_msg: "Update Post!",
     http_method: "patch",
-    post: @post %>
+    post: @post,
+    all_subs: @all_subs,
+    post_subs: @post_subs %>
 
 <%= link_to "Back to sub", sub_url(@sub) %>

@@ -1,10 +1,12 @@
 <h1> Create a Post </h1>
 
 <%= render "form",
-    passed_in_sub_id: params[:sub_id],
+    passed_in_sub_id: @sub.id,
     url: posts_url,
     button_msg: "Create Post!",
     http_method: "post",
-    post: @post %>
+    post: @post,
+    all_subs: @all_subs,
+    post_subs: @post_subs%>
 
-<%= link_to "Back to sub", sub_url(params[:sub_id]) %>
+<%= link_to "Back to sub", sub_url(@sub) %>
