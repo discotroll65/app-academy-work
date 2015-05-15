@@ -1,3 +1,5 @@
 <h1> Create a new Album </h1>
 
 <%= render "albums/album_form", album: @album, band: @band %>
+
+<%= link_to "Back to #{@band.name}'s albums", band_url(@band) %>

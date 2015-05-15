@@ -17,10 +17,15 @@ class ApplicationController < ActionController::Base
     reset_session_token!(current_user)
     session[:session_token] = nil
   end
+
   def reset_session_token!(user)
     user.session_token = SecureRandom::urlsafe_base64
     user.save!
     user.session_token
+  end
+
+  def ensure_logged_in!
+    redirect_to new_session_url unless current_user
   end
 
   private
