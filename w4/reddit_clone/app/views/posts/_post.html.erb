@@ -1,0 +1,10 @@
+<p>
+  <h3>
+    <% if post.url != "" %>
+      <a href="<%= post.url %>"> <%= post.title %> </a>
+    <% else %>
+      <%= link_to(post.title, post_url(post)) %>
+    <% end %>
+  </h3>
+</p>
+<hr>

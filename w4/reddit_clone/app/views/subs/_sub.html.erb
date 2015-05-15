@@ -1,5 +1,5 @@
 <h3><%= link_to sub.title, sub_url(sub) %></h3>
 <p><%= sub.description %></p>
-<%= button_to("Edit", edit_sub_url(sub)) if
+<%= button_to("Edit", edit_sub_url(sub), method: :get) if
     current_user.id == sub.moderator_id %>
 <hr>

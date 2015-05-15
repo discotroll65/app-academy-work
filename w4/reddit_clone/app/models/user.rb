@@ -1,5 +1,16 @@
 class User < ActiveRecord::Base
   attr_reader :password
+  has_many(
+    :subs,
+    class_name: 'Sub',
+    foreign_key: :moderator_id,
+    primary_key: :id
+  )
+  has_many(
+    :posts,
+    foreign_key: :author_id
+  )
+
   validates(
     :username,
     :session_token,
@@ -12,12 +23,6 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token!
 
-  has_many(
-    :subs,
-    class_name: 'Sub',
-    foreign_key: :moderator_id,
-    primary_key: :id
-  )
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     user && user.is_password?(password) ? user : nil

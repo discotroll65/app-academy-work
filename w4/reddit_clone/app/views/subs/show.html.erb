@@ -1,4 +1,12 @@
 <h1> Subforum: <%= @sub.title %> <h1>
 <h2> <%= @sub.description %> </h2>
+<hr>
+
+<%= link_to "Create a new post", new_sub_post_url(@sub) %>
+
+<h3>Posts:</h3>
+<%= render @posts %>
+
+<%= link_to "Create a new post", new_sub_post_url(@sub) %>
 
 <%= link_to "Back to All Subforums", subs_url %>

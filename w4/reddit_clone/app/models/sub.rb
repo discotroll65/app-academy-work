@@ -6,6 +6,8 @@ class Sub < ActiveRecord::Base
     primary_key: :id
   )
 
+  has_many :posts
+
   validates :title, :description, presence: true
-  validates :title, uniquness: true
+  validates :title, uniqueness: true
 end

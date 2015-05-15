@@ -1,0 +1,25 @@
+<form action="<%= url %>" method="post">
+  <%= csrf_tag %>
+  <input type="hidden"
+         name="_method"
+         value="<%= http_method %>">
+
+  <input type="hidden"
+         name="post[sub_id]"
+         value="<%= passed_in_sub_id %>">
+
+  <label>Title
+    <input type="text" name="post[title]" value="<%= post.title %>">
+  </label>
+
+  <label>URL
+    <input type="text" name="post[url]" value="<%= post.url %>">
+  </label>
+
+  <label>Content
+    <textarea rows="8" cols="25" name="post[content]"
+    ><%= post.content %></textarea>
+  </label>
+
+  <input type="submit" value="<%= button_msg %>">
+</form>

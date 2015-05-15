@@ -1,0 +1,10 @@
+<h1> Create a Post </h1>
+
+<%= render "form",
+    passed_in_sub_id: params[:sub_id],
+    url: posts_url,
+    button_msg: "Create Post!",
+    http_method: "post",
+    post: @post %>
+
+<%= link_to "Back to sub", sub_url(params[:sub_id]) %>

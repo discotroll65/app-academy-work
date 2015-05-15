@@ -1,0 +1,14 @@
+<%= link_to "Back to #{@sub.title}", sub_url(@sub) %>
+<h1><%= @post.title %></h1>
+
+<p>
+  <%= @author.username %>
+  <small>
+    <%= time_ago_in_words(@post.created_at) %> ago
+  </small>
+  <pre>
+  <%= @post.content %>
+  </pre>
+</p>
+
+<%= link_to "Back to #{@sub.title}", sub_url(@sub) %>
