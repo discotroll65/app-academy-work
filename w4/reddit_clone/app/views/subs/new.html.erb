@@ -1,0 +1,9 @@
+<h1>Create Subforum</h1>
+<%= render "form",
+  http_method: "post",
+  button_msg: "Make subforum!",
+  sub: @sub,
+  url: subs_url
+  %>
+
+  <%= link_to "Back to Subforums", subs_url %>

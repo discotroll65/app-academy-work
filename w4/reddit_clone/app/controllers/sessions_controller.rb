@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
       log_in!(@user)
       redirect_to root_url
     else
-      flash.now[:errors] = @user.errors.full_messages
+      @user = User.new(session_params)
+      flash.now[:errors] = ["Invalid username/password combo."]
       render :new
     end
   end
@@ -20,5 +21,11 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out!
+    redirect_to new_session_url
   end
+
+  private
+    def session_params
+      params.require(:user).permit(:username, :password)
+    end
 end

@@ -1,0 +1,9 @@
+<h1>Update Subforum</h1>
+<%= render "form",
+  http_method: "patch",
+  button_msg: "Update subforum!",
+  sub: @sub,
+  url: sub_url
+  %>
+
+  <%= link_to "Back to Subforums", subs_url %>
