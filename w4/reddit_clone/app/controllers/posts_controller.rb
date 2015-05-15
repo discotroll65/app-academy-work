@@ -23,6 +23,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @sub = @post.sub
     render :edit
   end
 
@@ -52,7 +53,8 @@ class PostsController < ApplicationController
 
   private
     def ensure_author
-      redirect_to :back unless current_user_id == author_id
+      post = Post.find(params[:id])
+      redirect_to :back unless current_user_id == post.author_id
     end
 
     def ensure_moderator

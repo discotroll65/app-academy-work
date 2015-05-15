@@ -1,0 +1,10 @@
+<h1> Update Post: <%= @post.title %> </h1>
+
+<%= render "form",
+    passed_in_sub_id: @sub.id,
+    url: post_url(@post),
+    button_msg: "Update Post!",
+    http_method: "patch",
+    post: @post %>
+
+<%= link_to "Back to sub", sub_url(@sub) %>
