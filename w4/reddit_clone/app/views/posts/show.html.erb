@@ -8,21 +8,15 @@
   </form>
 <% end %>
 
+<%= render( "shared/parent_content",
+    thought: @post,
+    author: @author,
+    discuss_link: new_post_comment_url(@post.id)
+  )
+ %>
 
-
-<p>
-  <%= @author.username %>
-  <small>
-    <%= time_ago_in_words(@post.created_at) %> ago
-  </small>
-  <pre>
-  <%= @post.content %>
-  </pre>
-</p>
-
-<p><%= link_to "Add Comment", new_post_comment_url(@post.id) %></p>
-
-<%= render @comments %>
-
+<ul>
+  <%= render @comments %>
+</ul>
 
 <%= link_to "Back to #{@sub.title}", sub_url(@sub) %>
