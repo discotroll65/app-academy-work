@@ -1,6 +1,4 @@
-<% children_comments = all_comments.select do |comment_child|
-    comment_child.parent_comment_id == comment.id
-  end %>
+<% children_comments = comment_tree[comment.id] %>
 <% author = comment.author %>
 
 
@@ -18,7 +16,7 @@
 <ul>
   <% children_comments.each do |comment_child| %>
     <%= render("comments/comment",
-            all_comments: all_comments,
+            comment_tree: comment_tree,
             comment: comment_child
             ) %>
   <% end%>

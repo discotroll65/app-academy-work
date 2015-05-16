@@ -54,7 +54,7 @@ class PostsController < ApplicationController
     #   @post.comments
     #   .where(parent_comment_id: nil).includes(:author)
     # )
-    @all_comments = Comment.where(post_id: @post.id).includes(:author)
+    @comment_tree = @post.comment_tree_hash
     @author = @post.author
     @sub = Sub.find(params[:sub_id])
 
