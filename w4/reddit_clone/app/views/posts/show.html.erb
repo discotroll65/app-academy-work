@@ -11,9 +11,13 @@
 <%= render( "shared/parent_content",
     thought: @post,
     author: @author,
-    discuss_link: new_post_comment_url(@post.id)
   )
  %>
+ <%= render("shared/discuss_button",
+    thought: @post,
+    discuss_link: new_post_comment_url(@post.id)
+    )
+  %>
 
 <ul>
   <%= render @comments %>

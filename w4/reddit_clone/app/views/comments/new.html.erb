@@ -1,4 +1,20 @@
-<h1>Add Comment for Post: <%= @post.title %></h1>
+<% parent_comment_id = params[:comment][:parent_comment_id] unless
+  params[:comment].nil?
+%>
+
+<% if parent_comment_id.nil? %>
+  <% thought = @post %>
+<% else %>
+  <% thought = Comment.find(parent_comment_id) %>
+<% end %>
+
+<h1>Reply: </h1>
+
+<%= render "shared/parent_content",
+  thought: thought,
+  author: thought.author
+%>
+
 
 <%= render "form", comment: @comment, passed_in_post_id: @post.id %>
 

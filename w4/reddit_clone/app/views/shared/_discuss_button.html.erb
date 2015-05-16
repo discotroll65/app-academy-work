@@ -1,0 +1,11 @@
+<span>
+  <form action="<%= discuss_link %>" method="get">
+    <%= csrf_tag %>
+    <% if thought.class == Comment %>
+      <input type="hidden"
+        name="comment[parent_comment_id]"
+        value="<%= thought.id %>">
+    <% end %>
+    <input type="submit" value="Add Comment">
+  </form>
+</span>

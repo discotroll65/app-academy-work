@@ -1,8 +1,13 @@
 <form action="<%= comments_url %>" method="post">
   <%= csrf_tag %>
-  <input type="hidden" name="comment[post_id]" value="<%= passed_in_post_id %>">
-
-
+  <input type="hidden"
+    name="comment[post_id]"
+    value="<%= passed_in_post_id %>">
+  <% unless params[:comment].nil? %>
+    <input type="hidden"
+      name="comment[parent_comment_id]"
+      value="<%= params[:comment][:parent_comment_id] %>">
+  <% end %>
   <label>Content
     <p>
       <textarea name="comment[content]" rows="8" cols="40"

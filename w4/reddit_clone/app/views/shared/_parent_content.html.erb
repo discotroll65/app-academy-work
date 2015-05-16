@@ -1,11 +1,9 @@
 <p>
-  <%= author.username %> <small><%= time_ago_in_words(thought.created_at) %> ago</small>
+  <%= author.username %>
+  <small><%= time_ago_in_words(thought.created_at) %> ago</small>
 
   <pre>
     <%= thought.content %>
   </pre>
 
-  <span>
-    <%= link_to "Add Comment", discuss_link %>
-  </span>
 </p>

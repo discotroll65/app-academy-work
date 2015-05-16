@@ -48,9 +48,13 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.includes(:comments).find(params[:id])
+    @post = Post.includes(comments: :sub_comments).find(params[:id])
 
-    @comments = @post.comments.includes(:author)
+    @comments = (
+      @post.comments
+      .where(parent_comment_id: nil).includes(:author)
+    )
+
     @author = @post.author
     @sub = Sub.find(params[:sub_id])
 
