@@ -1,0 +1,5 @@
+<h1>Add Comment for Post: <%= @post.title %></h1>
+
+<%= render "form", comment: @comment, passed_in_post_id: @post.id %>
+
+<%= link_to "Back to Post", :back %>

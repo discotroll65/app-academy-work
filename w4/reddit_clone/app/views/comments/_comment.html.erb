@@ -1,0 +1,4 @@
+<% author = comment.author %>
+<h4> <%= author.username %> </h4>
+<small> <%= time_ago_in_words(comment.created_at) %> </small>
+<pre> <%= comment.content %> </pre>
