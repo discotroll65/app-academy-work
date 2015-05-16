@@ -1,4 +1,6 @@
-<% sub_comments = comment.sub_comments %>
+<% children_comments = all_comments.select do |comment_child|
+    comment_child.parent_comment_id == comment.id
+  end %>
 <% author = comment.author %>
 
 
@@ -9,10 +11,15 @@
  %>
  <%= render("shared/discuss_button",
     thought: comment,
-    discuss_link: new_post_comment_url(comment.post)
+    discuss_link: new_post_comment_url(comment.post_id)
     )
   %>
 
 <ul>
-  <%= render sub_comments %>
+  <% children_comments.each do |comment_child| %>
+    <%= render("comments/comment",
+            all_comments: all_comments,
+            comment: comment_child
+            ) %>
+  <% end%>
 </ul>

@@ -20,7 +20,13 @@
   %>
 
 <ul>
-  <%= render @comments %>
+  <% @all_comments.each do |comment| %>
+    <%= render("comments/comment",
+            all_comments: @all_comments,
+            comment: comment
+            ) if
+          comment.parent_comment_id.nil? %>
+  <% end%>
 </ul>
 
 <%= link_to "Back to #{@sub.title}", sub_url(@sub) %>
