@@ -1,4 +1,11 @@
+<% sub_comments = comment.sub_comments %>
+
+
 <% author = comment.author %>
 <h4> <%= author.username %> </h4>
 <small> <%= time_ago_in_words(comment.created_at) %> </small>
+<small><%= link_to "#{sub_comments.length} Comments", comment_url(comment) if
+  sub_comments.length > 0 %></small>
 <pre> <%= comment.content %> </pre>
+
+<%= link_to "Add Comment", new_post_comment_url(comment.post) %>
