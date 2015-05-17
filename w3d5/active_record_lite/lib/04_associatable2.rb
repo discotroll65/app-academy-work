@@ -2,9 +2,8 @@ require_relative '03_associatable'
 
 # Phase IV
 module Associatable
-  # Remember to go back to 04_associatable to write ::assoc_options
 
-  def has_one_through(name, through_name, source_name)
+  def has_things_through(name, through_name, source_name, singular = true)
     through_belong_option = assoc_options[through_name]
 
     end_table = source_name.to_s.camelcase.constantize.table_name
@@ -33,7 +32,26 @@ module Associatable
         WHERE
         #{through_table}.#{through_primary_key} = ?
       SQL
-      end_belong_option.model_class.new(results.first)
+
+      if singular
+        end_belong_option.model_class.new(results.first)
+      else
+        relations = []
+        results.each do |result|
+          relations << end_belong_option.model_class.new(result)
+        end
+        relations
+      end
     end
   end
+
+  def has_one_through(name, through_name, source_name)
+    has_things_through(name, through_name, source_name, true)
+  end
+
+  def has_many_through(name, through_name, source_name)
+    has_things_through(name, through_name, source_name, false)
+  end
+
+
 end
