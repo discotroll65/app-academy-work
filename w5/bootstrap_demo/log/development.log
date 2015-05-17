@@ -8,3 +8,376 @@ Migrating to CreateUsers (20150517210438)
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150517210438"]]
   [1m[35m (2.5ms)[0m  commit transaction
   [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 14:47:34 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (11.8ms)
+  Rendered sessions/new.html.erb within layouts/application (16.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.5ms)
+Completed 200 OK in 108ms (Views: 96.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 14:47:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 14:47:35 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 14:47:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 14:47:35 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 14:47:39 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 14:47:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 14:47:39 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 14:47:48 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"0oMpfmecqU5mmp4jBatcRpgoX9NSpR/YMaQ6NVgDq+02HJMLdH9J9ydAwKXkzpVgCjHVbkhgvZ7AXod1OPZmgg==", "user"=>{"username"=>"garrett", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["username", "garrett"], ["password_digest", "$2a$10$sI0p5nsig5Wwet9v0U8yP.YK6nPyxY.AYUvBgMtZMbWKKcoiTQ9Lu"], ["session_token", "qoJh22bG8E-_I9RluKhCHA"], ["created_at", "2015-05-17 21:47:48.285604"], ["updated_at", "2015-05-17 21:47:48.285604"]]
+  [1m[35m (1.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["session_token", "g_UlE-18yEE9HlGMSYpYVA"], ["updated_at", "2015-05-17 21:47:48.289140"], ["id", 1]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/links
+Completed 302 Found in 85ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/links" for ::1 at 2015-05-17 14:47:48 -0700
+Processing by LinksController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT 1  [["session_token", "g_UlE-18yEE9HlGMSYpYVA"]]
+  Rendered links/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 14:47:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 14:47:48 -0700
+
+
+Started DELETE "/session" for ::1 at 2015-05-17 14:48:03 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"nQ7IwmHCSGW8i3gVdHpKVF5Kyh9GnvA3MjXEYUQgWcJ5kXK3ciGo3P1RJpOVH4NyzFNAolxbUnHDz3khJNWUrQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT 1[0m  [["session_token", "g_UlE-18yEE9HlGMSYpYVA"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["session_token", "L18gLceODrxPdHHVJ3CmIA"], ["updated_at", "2015-05-17 21:48:03.804157"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 7ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 14:48:03 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 14:48:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 14:48:03 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 15:45:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (35.2ms)
+  Rendered sessions/new.html.erb within layouts/application (50.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.9ms)
+Completed 200 OK in 278ms (Views: 269.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 15:45:20 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 15:45:20 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 15:45:20 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 15:45:20 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 15:46:41 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 2836ms (Views: 2834.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 15:46:44 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 15:46:44 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 15:46:44 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 15:46:44 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 15:47:23 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 191ms (Views: 190.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 15:47:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 15:47:24 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 15:47:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 15:47:24 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 15:47:24 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 15:59:34 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (63.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 84ms (Views: 19.9ms | ActiveRecord: 63.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 15:59:34 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 15:59:34 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 15:59:34 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 15:59:34 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 15:59:34 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:00:09 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:00:09 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:00:09 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:00:09 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:00:09 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:00:09 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:00:37 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:00:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:00:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:00:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:00:37 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:00:37 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:00:39 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:00:39 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:00:39 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:00:39 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:00:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:00:39 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:00:55 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:00:55 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:00:55 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:00:55 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:00:55 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:00:55 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:03:10 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (7.8ms)
+  [1m[35mUser Load (8.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 39ms (Views: 30.4ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:03:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:03:10 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:03:10 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:03:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:03:10 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:03:18 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:03:18 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:03:18 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:03:18 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:03:18 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:03:18 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:03:31 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:03:31 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:03:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:03:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:03:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:03:31 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 16:03:51 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 16:03:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 16:03:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 16:03:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 16:03:51 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 16:03:51 -0700
