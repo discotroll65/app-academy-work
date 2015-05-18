@@ -2972,3 +2972,1294 @@ Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2015-05-17 19:21:4
 
 
 Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for 127.0.0.1 at 2015-05-17 19:21:45 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:07:12 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (23.8ms)
+  Rendered sessions/new.html.erb within layouts/application (34.3ms)
+  [1m[35mUser Load (7.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.8ms)
+Completed 200 OK in 2165ms (Views: 2150.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:07:14 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:07:14 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:07:14 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:07:14 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:07:14 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:07:15 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:09:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:09:00 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:09:00 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:09:00 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:09:00 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:09:00 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:09:01 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:10:29 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:10:29 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:10:29 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:10:29 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:10:29 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:10:29 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:10:29 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:10:57 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.9ms)
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:10:58 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:10:58 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:10:58 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:10:58 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:10:58 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:10:58 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:12:20 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.8ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:12:20 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:12:20 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:12:20 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:12:20 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:12:20 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:12:20 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:13:48 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:13:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:13:48 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:13:48 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:13:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:13:48 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:14:01 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:14:38 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[35mUser Load (24.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 19.4ms | ActiveRecord: 24.8ms)
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:14:39 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:14:39 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:14:39 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:14:39 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:14:39 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:14:39 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:15:50 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (1.0ms)
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (37.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 69ms (Views: 30.8ms | ActiveRecord: 37.9ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:15:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:15:51 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:15:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:15:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:15:51 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:15:51 -0700
+
+
+Started GET "/" for ::1 at 2015-05-17 22:20:21 -0700
+Processing by LinksController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+Redirected to http://localhost:3000/session/new
+Filter chain halted as :ensure_signed_in! rendered or redirected
+Completed 302 Found in 48ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:20:22 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.7ms)
+  Rendered sessions/new.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.4ms)
+Completed 200 OK in 55ms (Views: 48.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:20:22 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:20:22 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:20:22 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:20:22 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:20:22 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:20:22 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:20:51 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:20:51 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:20:51 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:20:51 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:20:51 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:20:51 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:20:51 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:21:27 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:24:34 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (1.5ms)
+  Rendered users/new.html.erb within layouts/application (3.3ms)
+  [1m[36mUser Load (15.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 65ms (Views: 49.1ms | ActiveRecord: 15.5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:24:35 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:24:35 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:24:35 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:24:35 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:24:35 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:24:37 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"+nx4SrQcvRkBNPcTMR0MKf59gNp3qL8VSRp6sjAxGAce48I/p/9doEDuqZXQeMUPbGQKZ21tHVO44MfyUMTVaA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered layouts/_username_password_form.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 226ms (Views: 11.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:24:37 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:24:37 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:24:37 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:24:37 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:24:37 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:24:46 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"z+88wrWW+VcgcZcGTh7uT2gNkMHEWlSqLpN80zkKEh8rcIa3pnUZ7mGryYCveydp+hQafN6f9uzfacGTWf/fcA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered layouts/_username_password_form.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 87ms (Views: 6.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:24:46 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:24:46 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:24:46 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:24:46 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:24:46 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:25:03 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"z+88wrWW+VcgcZcGTh7uT2gNkMHEWlSqLpN80zkKEh8rcIa3pnUZ7mGryYCveydp+hQafN6f9uzfacGTWf/fcA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (11.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 99ms (Views: 9.6ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:25:03 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:25:03 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:25:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:25:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:25:03 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:25:05 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"PTi9AwStJqmYYZf9+mD6jXXWod4KhEaxwec7R3qjXj7Zpwd2F07GENm7yXsbBTOr588rYxBB5PcwHYYHGlaTUQ==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered layouts/_username_password_form.html.erb (0.2ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 86ms (Views: 8.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:25:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:25:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:25:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:25:05 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:25:05 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:25:06 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"wEDl1TeX0HzFps9K+tirdXWXwh+1bnfXX3/yuovP5WMk31+gJHQwxYR8kcwbvWJT545Ioq+r1ZGuhU/66zooDA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered layouts/_username_password_form.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 88ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:25:06 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:25:06 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:25:06 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:25:06 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:25:06 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:25:17 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"wEDl1TeX0HzFps9K+tirdXWXwh+1bnfXX3/yuovP5WMk31+gJHQwxYR8kcwbvWJT545Ioq+r1ZGuhU/66zooDA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 89ms (Views: 7.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:25:17 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:25:17 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:25:17 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:25:17 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:25:17 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:25:19 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"lpVi2hfou+zNH2JdUfTQn41omFUhkPWBWfV8S4dVrsByCtivBAtbVYzFPNuwkRm5H3ES6DtVV8eoD8EL56Bjrw==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered layouts/_username_password_form.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 88ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:25:19 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:25:19 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:25:19 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:25:19 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:25:19 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:25:20 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"YXKEnX+ubsWgSrhbdSbQKUFrBAtF6J5AHoUTMHqUzdOF7T7obE2OfOGQ5t2UQxkP03KOtl8tPAbvf65wGmEAvA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered layouts/_username_password_form.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 210ms (Views: 126.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:25:21 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:25:21 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:25:21 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:25:21 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:25:21 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:25:29 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"YXKEnX+ubsWgSrhbdSbQKUFrBAtF6J5AHoUTMHqUzdOF7T7obE2OfOGQ5t2UQxkP03KOtl8tPAbvf65wGmEAvA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (1.7ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 90ms (Views: 8.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:25:29 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:25:29 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:25:29 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:25:29 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:25:29 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:27:13 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"YXKEnX+ubsWgSrhbdSbQKUFrBAtF6J5AHoUTMHqUzdOF7T7obE2OfOGQ5t2UQxkP03KOtl8tPAbvf65wGmEAvA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 86ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:27:13 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:27:13 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:27:13 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:27:13 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:27:13 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:32:52 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:33:05 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"YXKEnX+ubsWgSrhbdSbQKUFrBAtF6J5AHoUTMHqUzdOF7T7obE2OfOGQ5t2UQxkP03KOtl8tPAbvf65wGmEAvA==", "user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered layouts/_username_password_form.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+  [1m[35mUser Load (15.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 146ms (Views: 52.0ms | ActiveRecord: 15.1ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:33:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:33:05 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:33:05 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:33:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:33:05 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:33:05 -0700
+
+
+Started POST "/users" for ::1 at 2015-05-17 22:33:28 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"xcrJYC/R+TJb+4h78KAgX0ziZanzVIjX/vzhmSdwtUEhVXMVPDIZixoh1v0Rxel53vvvFOmRKpEPBlzZR4V4Lg==", "user"=>{"username"=>"garrett", "password"=>"[FILTERED]"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "garrett"], ["password_digest", "$2a$10$IomY9tKsY7DBSm1KIZPARORC0PwuVJ/XGxlurmADT3Q/27cgKYVLO"], ["session_token", "VZiPsMwICO0A4O_M9Y8GxQ"], ["created_at", "2015-05-18 05:33:28.558556"], ["updated_at", "2015-05-18 05:33:28.558556"]]
+  [1m[36m (1.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["session_token", "cHOfTv03rpfDy6wWCp7rAQ"], ["updated_at", "2015-05-18 05:33:28.564149"], ["id", 2]]
+  [1m[35m (1.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/links
+Completed 302 Found in 85ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/links" for ::1 at 2015-05-17 22:33:28 -0700
+Processing by LinksController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT 1[0m  [["session_token", "cHOfTv03rpfDy6wWCp7rAQ"]]
+  Rendered links/index.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:33:28 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:33:28 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:33:28 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:33:28 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:33:28 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:33:28 -0700
+
+
+Started DELETE "/session" for ::1 at 2015-05-17 22:33:30 -0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"swrKdYk/vuj3w+zqRQhRzoHh7+k/2xbmiZgrrIunhz1XlXAAmtxeUbYZsmykbZjoE/hlVCUetKB4Ypbs61JKUg=="}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" = ? LIMIT 1  [["session_token", "cHOfTv03rpfDy6wWCp7rAQ"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "session_token" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["session_token", "8PzKj-OalD4UGSeCjvFrgg"], ["updated_at", "2015-05-18 05:33:30.848964"], ["id", 2]]
+  [1m[36m (0.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/session/new
+Completed 302 Found in 6ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:33:30 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:33:31 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:33:31 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:33:31 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:33:31 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:33:31 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:33:31 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:34:33 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:34:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:34:33 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:34:33 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:34:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:34:33 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:34:33 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:34:48 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:34:48 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:34:48 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:34:48 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:34:48 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:34:48 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:34:48 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:36:23 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (2.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:36:23 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:36:23 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:36:23 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:36:23 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:36:23 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:36:23 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:38:06 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (2.3ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:38:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:38:07 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:38:07 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:38:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:38:07 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:38:07 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:40:01 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered users/new.html.erb within layouts/application (5.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:40:02 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:40:02 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:40:02 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:40:02 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:40:02 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:40:02 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:41:52 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:41:52 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:41:52 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:41:52 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:41:52 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:41:52 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:41:52 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:42:07 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:42:07 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:42:07 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:42:07 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:42:07 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:42:07 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:42:07 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:42:33 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:42:33 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:42:33 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:42:33 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:42:33 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:42:33 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:42:33 -0700
+
+
+Started POST "/session/new" for ::1 at 2015-05-17 22:42:45 -0700
+
+ActionController::RoutingError (No route matches [POST] "/session/new"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (428.4ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (466.2ms)
+
+
+Started POST "/session/new" for ::1 at 2015-05-17 22:43:19 -0700
+
+ActionController::RoutingError (No route matches [POST] "/session/new"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/appacademy/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.4ms)
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:43:24 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.5ms)
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:43:24 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:43:24 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:43:24 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:43:24 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:43:24 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:43:24 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:43:26 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:43:26 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:43:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:43:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:43:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:43:26 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:43:26 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:44:26 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.3ms)
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:44:26 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:44:26 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:44:26 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:44:26 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:44:26 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:44:26 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:44:56 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (2.7ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:44:56 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:44:56 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:44:56 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:44:56 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:44:56 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:44:56 -0700
+
+
+Started GET "/users/new" for ::1 at 2015-05-17 22:45:04 -0700
+Processing by UsersController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.3ms)
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:45:05 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:45:05 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:45:05 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:45:05 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:45:05 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:45:05 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:45:09 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.6ms)
+  Rendered sessions/new.html.erb within layouts/application (2.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.2ms)
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:45:09 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:45:09 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:45:09 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:45:09 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:45:09 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:45:09 -0700
+
+
+Started GET "/session/new" for ::1 at 2015-05-17 22:46:03 -0700
+Processing by SessionsController#new as HTML
+  Rendered layouts/_username_password_form.html.erb (0.4ms)
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:46:03 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:46:03 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:46:03 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:46:03 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:46:03 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:46:03 -0700
+
+
+Started GET "/contact" for ::1 at 2015-05-17 22:46:04 -0700
+Processing by StaticPagesController#contact as HTML
+  Rendered static_pages/contact.html.erb within layouts/application (0.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 10.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:46:04 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:46:04 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:46:04 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:46:04 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:46:04 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:46:05 -0700
+
+
+Started GET "/about" for ::1 at 2015-05-17 22:46:06 -0700
+Processing by StaticPagesController#about as HTML
+  Rendered static_pages/about.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 60ms (Views: 60.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:46:06 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:46:06 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:46:06 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:46:06 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:46:06 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:46:07 -0700
+
+
+Started GET "/home" for ::1 at 2015-05-17 22:46:08 -0700
+Processing by StaticPagesController#home as HTML
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 9.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:46:08 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:46:08 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:46:08 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:46:08 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:46:08 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:46:08 -0700
+
+
+Started GET "/about" for ::1 at 2015-05-17 22:46:10 -0700
+Processing by StaticPagesController#about as HTML
+  Rendered static_pages/about.html.erb within layouts/application (0.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1[0m
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:46:10 -0700
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:46:10 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:46:10 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:46:10 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:46:10 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:46:10 -0700
+
+
+Started GET "/contact" for ::1 at 2015-05-17 22:46:11 -0700
+Processing by StaticPagesController#contact as HTML
+  Rendered static_pages/contact.html.erb within layouts/application (0.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT 1
+  Rendered layouts/_errors.html.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 8.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for ::1 at 2015-05-17 22:46:11 -0700
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for ::1 at 2015-05-17 22:46:11 -0700
+
+
+Started GET "/assets/application.js?body=1" for ::1 at 2015-05-17 22:46:11 -0700
+
+
+Started GET "/assets/bootstrap.js?body=1" for ::1 at 2015-05-17 22:46:11 -0700
+
+
+Started GET "/assets/jquery.js?body=1" for ::1 at 2015-05-17 22:46:11 -0700
+
+
+Started GET "/assets/bootstrap/glyphicons-halflings-regular.woff2" for ::1 at 2015-05-17 22:46:11 -0700
