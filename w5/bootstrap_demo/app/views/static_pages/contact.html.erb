@@ -1,2 +1,60 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <h1>Contact Us</h1>
+    <form action="#" method="post">
+      <%= csrf_tag %>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input id='name' class="form-control" type="text" name="name" value="Full Name here">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input id='email' class="form-control" type="text" name="email" value="your@email.com">
+      </div>
+
+      <div class="form-group">
+        <label for="topic">What can we help you with?</label>
+        <select id='topic' class="form-control" name="topic">
+          <option>Cars</option>
+          <option>pizza</option>
+          <option>candy</option>
+          <option>almonds</option>
+          <option>frisbee</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="body">Please type your meseage here</label>
+        <textarea id='body' class='form-control'
+          name="body" rows="8" cols="40">Your message here!</textarea>
+      </div>
+
+      <input class="btn btn-primary" type="submit" value="Send Feedback">
+    </form>
+  </div>
+
+  <div class="col-md-6">
+    <h1>Call us too!</h1>
+    <br>
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th> <th>Phone Number</th> <th>Title</th>
+      </tr>
+      <tr>
+        <td>Jessica</td> <td>445-354-2343</td> <td>CEO</td>
+      </tr>
+      <tr>
+        <td>Fran</td> <td>445-354-2343</td> <td>Head of Sales</td>
+      </tr>
+      <tr>
+        <td>Jimbo</td> <td>445-354-2343</td> <td>Pumphouse director</td>
+      </tr>
+      <tr>
+        <td>Claire</td> <td>445-354-2343</td> <td>CTO</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
