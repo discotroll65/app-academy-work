@@ -8,6 +8,21 @@
 </head>
 <body>
 
+  <p>
+    <%= render "layouts/errors" %>
+  </p>
+
+  <p>
+    <% if signed_in? %>
+      Hello <%= current_user.username %>!
+      <%= button_to 'Sign Out', session_url, method: :delete %>
+    <% else %>
+      <%= button_to 'Sign In!', new_session_url, method: :get %>
+      or
+      <%= button_to 'Sign Up!', new_user_url, method: :get %>
+    <% end %>
+  </p>
+
 <%= yield %>
 
 </body>

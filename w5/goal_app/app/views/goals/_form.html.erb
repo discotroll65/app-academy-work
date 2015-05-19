@@ -1,0 +1,30 @@
+<form action="<%= url %>" method="post">
+  <%= csrf_tag %>
+  <input type="hidden" name="_method" value="<%= http_method %>">
+
+  <p>
+    <label>Title
+      <input type="text" name="goal[title]" value="<%= @goal.title %>">
+    </label>
+  </p>
+
+  <p>
+    <label>Body
+      <textarea name="goal[body]" rows="8" cols="40"><%= @goal.body %></textarea>
+    </label>
+  </p>
+
+  <p>
+    <label>Private
+      <input type="radio" name="goal[public]" value="false"
+      <%= "checked" if goal.public != true %>>
+    </label>
+
+    <label>Public
+      <input type="radio" name="goal[public]" value="true"
+      <%= "checked" if goal.public == true %>>
+    </label>
+  </p>
+
+  <input type='submit' value='<%= button_msg %>' >
+</form>

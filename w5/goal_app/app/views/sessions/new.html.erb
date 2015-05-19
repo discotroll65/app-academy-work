@@ -1,0 +1,8 @@
+<h1>Sign In</h1>
+
+<%= render(
+  'layouts/username_password_form',
+  url: session_url,
+  button_msg: 'Sign In',
+  user: @user
+) %>
