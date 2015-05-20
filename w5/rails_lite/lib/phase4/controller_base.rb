@@ -1,5 +1,6 @@
 require_relative '../phase3/controller_base'
 require_relative './session'
+require_relative './flash'
 
 module Phase4
   class ControllerBase < Phase3::ControllerBase
@@ -11,11 +12,16 @@ module Phase4
     def render_content(content, content_type)
       super(content,content_type)
       session.store_session(@res)
+      flash.store_session(@res)
     end
 
     # method exposing a `Session` object
     def session
       @session_obj ||= Session.new(@req)
+    end
+
+    def flash
+      @flash_obj ||= Flash.new(@req)
     end
   end
 end

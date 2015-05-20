@@ -1,5 +1,6 @@
 require 'json'
 require 'webrick'
+require 'pry-byebug'
 
 module Phase4
   class Session
@@ -7,8 +8,9 @@ module Phase4
     # deserialize the cookie into a hash
 
     def initialize(req)
+
       our_cookie = req
-        .cookies.select{|cookie| cookie.name == '_rails_lite_app'}.first
+        .cookies.find{|cookie| cookie.name == '_rails_lite_app'}
       @cookie_hash = our_cookie.nil? ? {} : JSON.parse(our_cookie.value)
     end
 
@@ -26,6 +28,6 @@ module Phase4
       res.cookies << WEBrick::Cookie.new('_rails_lite_app', @cookie_hash.to_json)
       @cookie_hash
     end
-    
+
   end
 end

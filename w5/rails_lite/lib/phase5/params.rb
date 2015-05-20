@@ -35,7 +35,8 @@ module Phase5
     # argument format
     # user[address][street]=main  &  user[address][zip]=89436
     # should return
-    # { "user" => { "address" => { "street" => "main", "zip" => "89436" } } }
+    # { "user" => { "address" => { "street" => "main", "zip" => "89436"
+    #} } }
     def parse_www_encoded_form(www_encoded_form)
       params_key_vals = URI.decode_www_form(www_encoded_form).to_h
 
@@ -51,10 +52,8 @@ module Phase5
             current_nested_param[inner_key]
           end
         end
-
         nested_params
       end
-
     end
 
     # this should return an array
