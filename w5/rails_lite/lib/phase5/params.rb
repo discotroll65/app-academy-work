@@ -37,17 +37,31 @@ module Phase5
     # should return
     # { "user" => { "address" => { "street" => "main", "zip" => "89436" } } }
     def parse_www_encoded_form(www_encoded_form)
-      query_string_params = URI.decode_www_form(www_encoded_form).to_h
-      keys = query_string_params.keys
+      params_key_vals = URI.decode_www_form(www_encoded_form).to_h
 
+      params_key_vals.inject({}) do |nested_params, (key, val)|
+        nested_keys = parse_key(key)
 
-      binding.pry
+        nested_keys.inject(nested_params) do |current_nested_param,
+            inner_key|
+          if inner_key == nested_keys.last
+            current_nested_param[inner_key] = val
+          else
+            current_nested_param[inner_key] ||= {}
+            current_nested_param[inner_key]
+          end
+        end
+
+        nested_params
+      end
+
     end
 
     # this should return an array
     # user[address][street] should return ['user', 'address', 'street']
     def parse_key(key)
-
+      regex = /\]\[|\[|\]/
+      key.split(regex)
     end
   end
 end
