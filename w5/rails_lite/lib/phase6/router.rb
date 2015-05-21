@@ -13,7 +13,8 @@ module Phase6
 
     # checks if pattern matches path and method matches request method
     def matches?(req)
-      pattern.match(req.path).is_a?(MatchData) && http_method == req.request_method
+      pattern.match(req.path).is_a?(MatchData) &&
+        http_method.to_s.upcase == req.request_method.upcase
     end
 
     # use pattern to pull out route params (save for later?)
@@ -24,7 +25,7 @@ module Phase6
       match_data.names.each do |name|
         route_params[name] = match_data[name]
       end
-      
+
       controller_instance = controller_class.new(req, res, route_params)
       controller_instance.invoke_action(action_name)
 
@@ -66,6 +67,7 @@ module Phase6
 
     # either throw 404 or call run on a matched route
     def run(req, res)
+      #binding.pry
       route = match(req)
       if route
         route.run(req, res)

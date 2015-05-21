@@ -16,5 +16,17 @@ module Phase3
       render_content(content, "text/html")
     end
 
+    def link_to(link_name, url_path)
+      "<a href=#{url_path}>#{link_name}</a>"
+    end
+
+    def button_to(button_msg, button_path, button_method = {method: "post"})
+      html=<<-HTML
+        <form action="#{button_path}" method="post">
+          <input type="hidden" name="_method" value="#{button_method[:method]}">
+          <input type="submit" value="#{button_msg}">
+        </form>
+      HTML
+    end
   end
 end
