@@ -1,4 +1,5 @@
 require "pry-byebug"
+require 'uri'
 
 module Phase6
   class Route
@@ -67,7 +68,14 @@ module Phase6
 
     # either throw 404 or call run on a matched route
     def run(req, res)
-      #binding.pry
+      req_body_params = URI.decode_www_form(req.body).to_h if req.body
+      if req_body_params
+        if req_body_params["_method"]
+          req.instance_variable_set(
+            :@request_method, req_body_params["_method"]
+          )
+        end
+      end
       route = match(req)
       if route
         route.run(req, res)

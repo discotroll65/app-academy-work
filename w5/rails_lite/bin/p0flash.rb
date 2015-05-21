@@ -31,7 +31,6 @@ end
 
 server = WEBrick::HTTPServer.new(Port: 3000)
 server.mount_proc('/') do |req, res|
-  #binding.pry
   route = router.run(req, res)
 end
 
