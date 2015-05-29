@@ -29,6 +29,13 @@ class UsersController < ApplicationController
     end
 
     @user = User.find(params[:id])
+
+    if current_user.followees.any?{|followee| followee.id == @user.id }
+      @initial_follow_state = "followed"
+    else
+      @initial_follow_state = "unfollowed"
+    end
+
     render :show
   end
 
@@ -38,6 +45,8 @@ class UsersController < ApplicationController
     else
       @users = User.none
     end
+
+    @current_user_followees = current_user.followees
 
     respond_to do |format|
       format.html { render :search }
