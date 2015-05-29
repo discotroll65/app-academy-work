@@ -40,13 +40,14 @@ class UsersController < ApplicationController
   end
 
   def search
+    puts params[:query]
     if params[:query].present?
       @users = User.where("username ~ ?", params[:query])
     else
       @users = User.none
     end
+    puts @users
 
-    @current_user_followees = current_user.followees
 
     respond_to do |format|
       format.html { render :search }
