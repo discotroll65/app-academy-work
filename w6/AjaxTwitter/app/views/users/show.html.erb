@@ -4,6 +4,8 @@
   user: @user,
   initial_follow_state: @initial_follow_state %>
 
+  <%= render "tweets/form" %>
+
 <b>Tweets</b>
 <ul>
   <% @user.tweets.each do |tweet| %>
