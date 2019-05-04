@@ -1,3 +1,4 @@
 .fuse_hidden*
 *.sqlite3
 *.db
+*.zip
