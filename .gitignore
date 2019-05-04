@@ -2,3 +2,7 @@
 *.sqlite3
 *.db
 *.zip
+node_modules
+bundle.js
+bundle.js.map
+

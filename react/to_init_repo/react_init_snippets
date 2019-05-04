@@ -1,5 +1,63 @@
+*npm init --yes: Initializes an app with NPM by generating a boilerplate package.json.
+
+*npm install <package_name>: Installs and lists a NPM package as a dependency in a package.json.
+
+*npm install: Downloads all JavaScript dependencies listed in a package.json.
+Add a webpack script to enable npm run webpack.
+
+
+**********************
+npm commands to run
+*********************
 npm init --yes
 npm install webpack webpack-cli @babel/core @babel/preset-env @babel/preset-react babel-loader react react-dom
 
+*****************************
+sample webpack.config.js :
+*****************************
+  
+const path = require('path');
+
+module.exports = {
+  context: __dirname,
+  entry: "./entry.jsx",
+  output: {
+    path: path.resolve(__dirname),
+    filename: "bundle.js"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'babel-loader',
+          query: {
+            presets: ['@babel/env', '@babel/react']
+          }
+        },
+      }
+    ]
+  },
+  devtool: 'source-map',
+  resolve: {
+    extensions: [".js", ".jsx", "*"]
+  }
+};
+
 
 ***********
+in package.json:
+*************
+"scripts": {
+    "webpack": "webpack --mode=development --watch",
+  },
+
+***********
+in .gitignore:
+***********
+node_modules
+bundle.js
+bundle.js.map
+
+
