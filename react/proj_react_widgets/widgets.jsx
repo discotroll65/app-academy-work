@@ -1,21 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-
-class App extends React.Component {
-
-  constructor(props){
-    super(props);
-  }
-
-  render(){
-    <div>Oh hey I did it</div>
-  }
-
-}
+import Root from './frontend/root';
 
 document.addEventListener('DOMContentLoaded', () =>{
   const root = document.getElementById('root');
 
-  ReactDOM.render(<App/>, root);
+  ReactDOM.render(<Root/>, root);
 });

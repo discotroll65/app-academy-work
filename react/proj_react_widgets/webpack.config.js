@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './entry.jsx',
+  entry: './widgets.jsx',
   output:{
     path: path.resolve(__dirname),
     filename: './bundle.js'
@@ -24,6 +24,10 @@ module.exports = {
   devtool: 'sourcemap',
   resolve:{
     extensions: [".jsx", ".js", "*"]
+  },
+  watchOptions: {
+    poll: true,
+    ignored: /node_modules/
   }
   
 };
